@@ -1,0 +1,33 @@
+<resources>
+    <string name="app_name">iBeor</string>
+    <string name="create_account">Create Account</string>
+    <string name="sign_in">Sign in</string>
+    <string name="sign_in_withemail">Sign in with email</string>
+    <string name="trouble_signing_in">Trouble Signing In?</string>
+    <string name="by_tapping_create_account_or_sign_in_you_agree_to_our_terms_learn_how_we_process_your_data_on_our_privacy_or_policy_and_cookies_policy">By tapping create account or Sign in, you agree to our Terms. Learn how we process your data on our Privacy or Policy and Cookies Policy</string>
+    <string name="apple">Apple</string>
+    <string name="phone_number">Phone Number</string>
+    <string name="facebook">Facebook</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="account_recovery">Account Recovery</string>
+    <string name="changed_your_phone_number_n_we_can_help_you_login_with_your_email_address">Changed your phone Number? \n We can help you login with your email address</string>
+    <string name="we_ll_email_you_a_link_that_will_instantly_log_you_in">We\'ll email you a link that will instantly log you in.</string>
+    <string name="email_address">Email Address</string>
+    <string name="resend">Resend</string>
+    <string name="check_your_mail">check your mail!</string>
+    <string name="if_we_found_an_account_with_theibeor_gmail_com_ann_email_an_email_has_been_sent_lease_check_your_email_with_in_a_moment">if we found an account with theibeor@gmail.com, ann email an email has been sent. lease check your email with in a moment.</string>
+    <string name="okay">OKay</string>
+    <string name="my_phone_number_is">My Phone Number is</string>
+    <string name="we_protect_our_community_by_making_sure_everyone_on_ibeor_is_real_we_will_never_share_your_phone_number_with_anyone">We protect our community by making sure everyone on iBeor is real. We will never share your phone number with anyone.</string>
+    <string name="the_number_you_have_entered_is_invalid_please_enter_a_valid_number">the Number you have entered is invalid. Please enter a valid number.</string>
+    <string name="we_have_sent_you_one_time_password_nplease_check">We have sent you one time password \nplease check</string>
+    <string name="enter_otp">Enter OTP</string>
+    <string name="enter_your_code">Enter Your Code</string>
+    <string name="this_is_how_your_name_will_apear_in_ibeor">This is how your name will apear in iBeor</string>
+    <string name="enter_your_name">First Name</string>
+    <string name="allow_location">Allow Location</string>
+    <string name="we_use_your_location_to_show_you_to_potential_matches_in_your_area">We use your location to show you to potential matches in your area</string>
+    <string name="desable">Desable</string>
+    <string name="enable">Enable</string>
+</resources>

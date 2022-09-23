@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="phonecodeviewmodel"
+            type="com.example.ibeor.viewmodels.PhoneCodeViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".activities.fragments.EnterPhoneCodeFragment">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:onClick="@{phonecodeviewmodel::backprees}"
+            android:src="@drawable/back_btn"
+            app:layout_constraintBottom_toTopOf="@+id/recover"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.180" />
+
+        <TextView
+            android:id="@+id/recover"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="140dp"
+            android:gravity="center"
+            android:padding="@dimen/_5sdp"
+            android:text="@string/enter_your_code"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_16sdp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@+id/demo_tv"
+            app:layout_constraintEnd_toEndOf="@+id/demo_tv"
+            app:layout_constraintStart_toStartOf="@+id/demo_tv"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="MissingConstraints" />
+
+        <in.aabhasjindal.otptextview.OtpTextView
+            android:id="@+id/ln"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:hint="@string/email_address"
+            android:padding="@dimen/_5sdp"
+            android:paddingBottom="@dimen/_10sdp"
+            android:textColor="@color/black"
+            app:bar_active_color="@color/white"
+            app:bar_enabled="true"
+            app:bar_height="1.5dp"
+            app:bar_inactive_color="@color/white"
+            app:bar_margin_bottom="0dp"
+            app:bar_margin_left="2dp"
+            app:bar_margin_right="2dp"
+            app:box_margin="0dp"
+            app:height="@dimen/_40sdp"
+            app:layout_constraintEnd_toEndOf="@+id/resend"
+            app:layout_constraintStart_toStartOf="@+id/resend"
+            app:layout_constraintTop_toBottomOf="@+id/textView"
+            app:length="6"
+            app:otp_box_background="@drawable/textfield_back"
+            app:width="@dimen/_40sdp"
+            tools:ignore="MissingConstraints" />
+
+
+        <TextView
+            android:id="@+id/resend"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:layout_marginEnd="@dimen/_16sdp"
+            android:layout_marginBottom="28dp"
+            android:gravity="left"
+            android:padding="@dimen/_3sdp"
+            android:text="@string/resend"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_10sdp"
+            app:layout_constraintBottom_toTopOf="@+id/btnSign_in"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="@+id/btnSign_in"
+            app:layout_constraintTop_toBottomOf="@+id/ln" />
+
+        <TextView
+            android:id="@+id/demo_tv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_26sdp"
+            android:layout_marginEnd="@dimen/_26sdp"
+            android:gravity="center"
+            android:padding="@dimen/_8sdp"
+            android:text="@string/we_have_sent_you_one_time_password_nplease_check"
+            app:layout_constraintBottom_toTopOf="@+id/textView"
+            app:layout_constraintEnd_toEndOf="@+id/textView"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="@+id/textView"
+            app:layout_constraintTop_toBottomOf="@+id/recover" />
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:layout_marginEnd="@dimen/_16sdp"
+            android:layout_marginBottom="8dp"
+            android:gravity="start"
+            android:padding="@dimen/_3sdp"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:text="Enter OTP"
+            app:layout_constraintBottom_toTopOf="@+id/ln"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/ln"
+            app:layout_constraintTop_toBottomOf="@+id/demo_tv" />
+
+        <TextView
+            android:id="@+id/timer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_16sdp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:layout_marginEnd="@dimen/_16sdp"
+            android:layout_marginBottom="8dp"
+            android:gravity="start"
+            android:padding="@dimen/_3sdp"
+            android:text="00:45"
+            app:layout_constraintBottom_toTopOf="@+id/ln"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="@+id/ln"
+            app:layout_constraintTop_toBottomOf="@+id/demo_tv" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnSign_in"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="252dp"
+            android:background="@drawable/purple_back"
+            android:onClick="@{phonecodeviewmodel::continu}"
+            android:padding="@dimen/_5sdp"
+            android:layout_marginEnd="@dimen/_26sdp"
+            android:layout_marginStart="@dimen/_26sdp"
+            android:text="Continue "
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_16sdp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            tools:layout_editor_absoluteX="0dp" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

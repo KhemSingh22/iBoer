@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+<variable
+    name="loginviewmodel"
+    type="com.example.ibeor.activities.activities.viewmodels.LoginViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".activities.activities.LoginActivity">
+
+        <ImageView
+            android:id="@+id/img"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_100sdp"
+            android:layout_margin="@dimen/_26sdp"
+            android:padding="@dimen/_10sdp"
+            android:src="@drawable/splash_logo"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.128"
+            tools:layout_editor_absoluteX="33dp" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_create_Accont"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="180dp"
+            android:background="@drawable/green_back"
+            android:text="@string/create_account"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:onClick="@{loginviewmodel::createAccount}"
+            android:layout_marginStart="@dimen/_26sdp"
+            android:layout_marginEnd="@dimen/_26sdp"
+            android:textSize="@dimen/_16sdp"
+            app:layout_constraintBottom_toTopOf="@+id/btnSign_in"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/img" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnSign_in"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_16sdp"
+            android:background="@drawable/purple_back"
+            android:text="@string/sign_in"
+            android:layout_marginStart="@dimen/_26sdp"
+            android:layout_marginEnd="@dimen/_26sdp"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:onClick="@{loginviewmodel::signIn}"
+            android:textSize="@dimen/_16sdp"
+            app:layout_constraintBottom_toTopOf="@+id/demo_tv"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btn_create_Accont" />
+
+        <TextView
+            android:id="@+id/demo_tv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_26sdp"
+            android:layout_marginTop="@dimen/_16sdp"
+            android:layout_marginEnd="@dimen/_26sdp"
+            android:padding="@dimen/_8sdp"
+            android:text="@string/by_tapping_create_account_or_sign_in_you_agree_to_our_terms_learn_how_we_process_your_data_on_our_privacy_or_policy_and_cookies_policy"
+            app:layout_constraintBottom_toTopOf="@+id/truble_signin"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btnSign_in" />
+
+        <TextView
+            android:id="@+id/truble_signin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_16sdp"
+            android:gravity="center"
+            android:padding="@dimen/_8sdp"
+            android:text="@string/trouble_signing_in"
+            android:textColor="@color/red"
+            android:textSize="@dimen/_16sdp"
+            android:textStyle="bold"
+            android:onClick="@{loginviewmodel::troubleSigning}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginBottom="@dimen/_16sdp"
+            app:layout_constraintTop_toBottomOf="@+id/demo_tv"
+            app:layout_constraintVertical_bias="0.272" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
