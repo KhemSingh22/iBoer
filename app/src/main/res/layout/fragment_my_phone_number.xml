@@ -16,17 +16,18 @@
         tools:context=".activities.fragments.MyPhoneNumberFragment">
 
         <ImageView
+            android:id="@+id/back"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/_10sdp"
+            android:layout_marginStart="@dimen/_16sdp"
+            android:layout_marginTop="@dimen/_16sdp"
             android:onClick="@{myphonenoviewmodel::backprees}"
             android:src="@drawable/back_btn"
-            app:layout_constraintBottom_toTopOf="@+id/recover"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
+            android:text="@string/allow_location"
+            android:textColor="@color/black"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.180" />
+            app:layout_constraintTop_toTopOf="parent" />
+
 
         <TextView
             android:id="@+id/recover"
@@ -52,13 +53,13 @@
             android:layout_marginStart="@dimen/_16sdp"
             android:layout_marginEnd="@dimen/_16sdp"
             android:layout_marginBottom="@dimen/_10sdp"
-            android:src="@drawable/flag"
             android:background="@drawable/textfield_back"
             android:gravity="left"
             android:hint="@string/email_address"
             android:paddingLeft="@dimen/_10sdp"
             android:paddingTop="@dimen/_8sdp"
             android:paddingRight="@dimen/_16sdp"
+            android:src="@drawable/flag"
             android:textColorHint="@color/black"
             app:layout_constraintBottom_toTopOf="@+id/textView2"
             app:layout_constraintEnd_toEndOf="@+id/textView2"
@@ -156,44 +157,63 @@
             app:layout_constraintStart_toStartOf="@+id/ln"
             app:layout_constraintTop_toBottomOf="@+id/demo_tv" />
 
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/btnSign_in"
-            android:layout_width="match_parent"
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/btn_conti"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/_26sdp"
+            android:layout_marginTop="@dimen/_26sdp"
             android:layout_marginEnd="@dimen/_26sdp"
-            android:layout_marginBottom="276dp"
-            android:background="@drawable/purple_back"
-            android:onClick="@{myphonenoviewmodel::continu}"
-            android:padding="@dimen/_5sdp"
-            android:text="Continue "
-            android:textAllCaps="false"
-            android:textColor="@color/white"
-            android:textSize="@dimen/_16sdp"
-            app:layout_constraintBottom_toBottomOf="parent"
+            android:shadowColor="@color/light_black"
+            app:cardCornerRadius="@dimen/_23sdp"
+            app:cardElevation="@dimen/_10sdp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView2"
-            tools:layout_editor_absoluteX="0dp" />
+            tools:layout_editor_absoluteX="0dp">
 
+            <androidx.appcompat.widget.AppCompatButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/_3sdp"
+                android:background="@drawable/purple_back"
+                android:onClick="@{myphonenoviewmodel::continu}"
+                android:padding="@dimen/_5sdp"
+                android:text="Continue "
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_16sdp" />
 
-        <androidx.appcompat.widget.AppCompatButton
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
             android:id="@+id/cancel_btn"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="192dp"
-            android:background="@drawable/gray_back"
-            android:onClick="@{myphonenoviewmodel::cancel}"
-            android:padding="@dimen/_5sdp"
-            android:text="Cancel "
             android:layout_marginStart="@dimen/_26sdp"
+            android:layout_marginTop="@dimen/_10sdp"
             android:layout_marginEnd="@dimen/_26sdp"
-            android:textAllCaps="false"
-            android:textColor="@color/white"
-            android:textSize="@dimen/_16sdp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="@+id/btnSign_in"
-            app:layout_constraintStart_toStartOf="@+id/btnSign_in"
-            app:layout_constraintTop_toBottomOf="@+id/btnSign_in"
-            app:layout_constraintVertical_bias="1.0" />
+            android:shadowColor="@color/light_black"
+            app:cardCornerRadius="@dimen/_23sdp"
+            app:cardElevation="@dimen/_10sdp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btn_conti">
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/_3sdp"
+                android:background="@drawable/gray_back"
+                android:onClick="@{myphonenoviewmodel::cancel}"
+                android:padding="@dimen/_5sdp"
+                android:text="Cancel "
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_16sdp" />
+
+        </androidx.cardview.widget.CardView>
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

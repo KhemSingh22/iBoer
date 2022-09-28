@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+<variable
+    name="madeVM"
+    type="com.example.ibeor.viewmodels.MadeViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".activities.AccountRecoveryActivity">
+
+        <ImageView
+            android:id="@+id/back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_16sdp"
+            android:layout_marginTop="@dimen/_16sdp"
+            android:onClick="@{madeVM::onback}"
+            android:src="@drawable/back_btn"
+            android:visibility="gone"
+            android:text="@string/allow_location"
+            android:textColor="@color/black"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/logo"
+            android:layout_width="@dimen/_250sdp"
+            android:layout_height="@dimen/_100sdp"
+            android:src="@drawable/splash_logo"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="@dimen/_56sdp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/back"
+            />
+
+        <TextView
+            android:id="@+id/demo_yv"
+            android:layout_width="wrap_content"
+            android:text="@string/yaaah_you_made_it"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:textStyle="bold"
+            android:textSize="@dimen/_22sdp"
+            android:textColor="@color/black"
+            android:layout_marginTop="@dimen/_26sdp"
+            android:padding="@dimen/_5sdp"
+            app:layout_constraintTop_toBottomOf="@+id/logo"
+            android:layout_height="wrap_content"/>
+        <TextView
+            android:id="@+id/demo_tvt"
+            android:layout_width="wrap_content"
+            android:text="@string/start_matching_with_singles_near_you"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:textSize="@dimen/_12sdp"
+            android:textColor="@color/black"
+            android:layout_marginTop="@dimen/_26sdp"
+            android:padding="@dimen/_5sdp"
+            app:layout_constraintTop_toBottomOf="@+id/demo_yv"
+            android:layout_height="wrap_content"/>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/btn_conti"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_26sdp"
+            android:layout_marginTop="@dimen/_26sdp"
+            android:layout_marginEnd="@dimen/_26sdp"
+            android:shadowColor="@color/light_black"
+            app:cardCornerRadius="@dimen/_23sdp"
+            app:cardElevation="@dimen/_10sdp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/demo_tvt"
+            tools:layout_editor_absoluteX="0dp">
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/_3sdp"
+                android:background="@drawable/purple_back"
+                android:onClick="@{madeVM::continu}"
+                android:padding="@dimen/_5sdp"
+                android:text="Continue "
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_16sdp" />
+
+        </androidx.cardview.widget.CardView>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+<variable
+    name="addPhotoVM"
+    type="com.example.ibeor.viewmodels.AddPhotoViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".fragments.AddPhotoFragment">
+      
+        <ImageView
+            android:id="@+id/back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_16sdp"
+            android:layout_marginTop="@dimen/_16sdp"
+            android:onClick="@{addPhotoVM::onback}"
+            android:src="@drawable/back_btn"
+            android:text="@string/allow_location"
+            android:textColor="@color/black"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+        <TextView
+            android:id="@+id/add_photo"
+            android:layout_width="wrap_content"
+            android:text="@string/add_photos"
+            android:textSize="@dimen/_16sdp"
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            android:layout_marginTop="@dimen/_50sdp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/back"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            android:id="@+id/demo_tv"
+            android:layout_width="wrap_content"
+            android:text="@string/add_at_least_2_photos_to_continue"
+            app:layout_constraintStart_toStartOf="parent"
+            android:textSize="@dimen/_10sdp"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="@dimen/_8sdp"
+            android:padding="@dimen/_3sdp"
+            app:layout_constraintTop_toBottomOf="@+id/add_photo"
+            android:layout_height="wrap_content"/>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_layout"
+            android:layout_width="match_parent"
+            android:layout_marginTop="@dimen/_20sdp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_16sdp"
+            android:layout_marginEnd="@dimen/_16sdp"
+            app:layout_constraintTop_toBottomOf="@+id/demo_tv"
+            />
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="wrap_content"
+            android:layout_marginTop="@dimen/_50sdp"
+            android:layout_marginStart="@dimen/_26sdp"
+            android:layout_marginEnd="@dimen/_26sdp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:cardElevation="@dimen/_10sdp"
+            android:shadowColor="@color/light_black"
+            app:cardCornerRadius="@dimen/_23sdp"
+            app:layout_constraintTop_toBottomOf="@+id/rv_layout"
+            android:layout_height="wrap_content">
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btnSign_in"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/purple_back"
+                android:onClick="@{addPhotoVM::continu}"
+                android:padding="@dimen/_5sdp"
+                android:text="Continue "
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:layout_margin="@dimen/_3sdp"
+                android:textSize="@dimen/_16sdp"
+                tools:layout_editor_absoluteX="0dp" />
+
+        </androidx.cardview.widget.CardView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools">
+
+        <data>
+
+            <variable
+                name="genderViewmodel"
+                type="com.example.ibeor.viewmodels.GenderViewModel" />
+        </data>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:context=".activities.fragments.GenderFragment">
+
+            <ImageView
+                android:id="@+id/back"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_16sdp"
+                android:layout_marginTop="@dimen/_16sdp"
+                android:onClick="@{genderViewmodel::backprees}"
+                android:src="@drawable/back_btn"
+                android:text="@string/allow_location"
+                android:textColor="@color/black"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+            <TextView
+                android:id="@+id/tv_Title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_120sdp"
+                android:gravity="center"
+                android:padding="@dimen/_5sdp"
+                android:text="@string/i_am_a"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_16sdp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toTopOf="@+id/tv_man"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tv_man"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_26sdp"
+                android:layout_marginEnd="@dimen/_26sdp"
+                android:gravity="start"
+                android:padding="@dimen/_12sdp"
+                android:text="@string/man"
+                android:layout_marginTop="@dimen/_16sdp"
+                android:background="@drawable/textfield_back"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_Title" />
+
+
+            <TextView
+                android:id="@+id/tv_woman"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_26sdp"
+                android:layout_marginEnd="@dimen/_26sdp"
+                android:gravity="start"
+                android:padding="@dimen/_12sdp"
+                android:layout_marginBottom="@dimen/_3sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:background="@drawable/textfield_back"
+                android:text="@string/woman"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_man" />
+
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/btnSign_in"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_26sdp"
+                android:layout_marginTop="@dimen/_26sdp"
+                android:layout_marginEnd="@dimen/_26sdp"
+                android:shadowColor="@color/light_black"
+                app:cardCornerRadius="@dimen/_23sdp"
+                app:cardElevation="@dimen/_10sdp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_woman">
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/_3sdp"
+                    android:background="@drawable/purple_back"
+                    android:onClick="@{genderViewmodel::continu}"
+                    android:padding="@dimen/_5sdp"
+                    android:text="Continue "
+                    android:textAllCaps="false"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/_16sdp"
+
+
+                    />
+
+            </androidx.cardview.widget.CardView>
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </layout>

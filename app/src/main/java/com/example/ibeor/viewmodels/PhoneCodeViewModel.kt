@@ -15,7 +15,7 @@ class PhoneCodeViewModel(var activity: Activity) : AndroidViewModel(activity.app
             .navigate(R.id.action_enterPhoneCodeFragment_to_yourMailFragment)
     }
 
-    fun backprees(view: View) {
+    fun back(view: View) {
         activity.onBackPressed()
     }
 

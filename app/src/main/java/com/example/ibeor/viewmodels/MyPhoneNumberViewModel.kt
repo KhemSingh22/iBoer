@@ -5,6 +5,7 @@ import android.app.Dialog
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
+import androidx.cardview.widget.CardView
 import androidx.lifecycle.ViewModel
 import androidx.navigation.Navigation
 import com.example.ibeor.R
@@ -31,7 +32,7 @@ class MyPhoneNumberViewModel(var activity: Activity) : ViewModel() {
         dialog.getWindow()!!
             .setLayout(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT)
         dialog.setCancelable(true)
-        val ok = dialog.findViewById<TextView>(R.id.okay)
+        val ok = dialog.findViewById<CardView>(R.id.okay)
 
         ok.setOnClickListener {
             Navigation.findNavController(view)

@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_margin="@dimen/_5sdp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/wel_items">
+
+        <ImageView
+            android:id="@+id/country_image"
+            android:layout_width="@dimen/_20sdp"
+            android:layout_height="@dimen/_20sdp"
+            android:layout_marginStart="@dimen/_12sdp"
+            android:layout_marginTop="@dimen/_8sdp"
+            android:padding="@dimen/_3sdp"
+            android:src="@drawable/green_tick"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="MissingConstraints" />
+
+        <TextView
+            android:id="@+id/beuourself"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="@dimen/_12sdp"
+            android:layout_marginTop="@dimen/_8sdp"
+            android:layout_toEndOf="@+id/country_image"
+            android:gravity="center"
+            android:text="@string/be_yourself"
+            android:textColor="@android:color/black"
+            android:textSize="20sp"
+            app:layout_constraintStart_toEndOf="@id/country_image"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="MissingConstraints" />
+
+        <TextView
+            android:id="@+id/description_"
+            android:layout_width="@dimen/_250sdp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="@dimen/_12sdp"
+            android:layout_marginTop="@dimen/_8sdp"
+            android:layout_marginBottom="@dimen/_8sdp"
+            android:layout_toEndOf="@+id/country_image"
+            android:gravity="start"
+            android:padding="@dimen/_8sdp"
+            android:text="@string/make_sure_your_photos_age_and_bio_are_true_to_who_you_are"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/country_image"
+            tools:ignore="MissingConstraints" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

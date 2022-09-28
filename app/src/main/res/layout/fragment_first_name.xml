@@ -1,124 +1,133 @@
 <?xml version="1.0" encoding="utf-8"?>
-    <layout xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
-        xmlns:tools="http://schemas.android.com/tools">
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
 
-        <data>
-            <variable
-                name="firestnameviewmodmel"
-                type="com.example.ibeor.viewmodels.FirstNameViewModel" />
-        </data>
+    <data>
 
-        <androidx.constraintlayout.widget.ConstraintLayout
+        <variable
+            name="firestnameviewmodmel"
+            type="com.example.ibeor.viewmodels.FirstNameViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".activities.fragments.FirstNameFragment">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_16sdp"
+            android:layout_marginTop="@dimen/_16sdp"
+            android:onClick="@{firestnameviewmodmel::onback}"
+            android:src="@drawable/back_btn"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+
+            />
+
+        <TextView
+            android:id="@+id/recover"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_120sdp"
+            android:gravity="center"
+            android:padding="@dimen/_5sdp"
+            android:text="@string/enter_your_first_name"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_16sdp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@+id/demo_tv"
+            app:layout_constraintEnd_toEndOf="@+id/demo_tv"
+            app:layout_constraintStart_toStartOf="@+id/demo_tv"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <EditText
+            android:id="@+id/edt_email"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            tools:context=".activities.fragments.FirstNameFragment">
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_16sdp"
+            android:layout_marginEnd="@dimen/_16sdp"
+            android:layout_marginBottom="@dimen/_10sdp"
+            android:background="@drawable/textfield_back"
+            android:drawableLeft="@drawable/fname"
+            android:drawablePadding="@dimen/_10sdp"
+            android:gravity="left"
+            android:hint="@string/first_name"
+            android:paddingLeft="@dimen/_16sdp"
+            android:paddingTop="@dimen/_8sdp"
+            android:paddingRight="@dimen/_16sdp"
+            android:paddingBottom="@dimen/_8sdp"
+            android:text="@={firestnameviewmodmel.firstName}"
+            android:textColorHint="@color/black"
+            app:layout_constraintBottom_toTopOf="@+id/btnSign_in"
+            app:layout_constraintEnd_toEndOf="@+id/btnSign_in"
+            app:layout_constraintStart_toStartOf="@+id/btnSign_in"
+            app:layout_constraintTop_toBottomOf="@+id/textView"
+            app:layout_constraintVertical_bias="0.167"
+            tools:ignore="MissingConstraints" />
 
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="@dimen/_10sdp"
-                android:onClick="@{firestnameviewmodmel::onback}"
-                android:src="@drawable/back_btn"
-                app:layout_constraintBottom_toTopOf="@+id/recover"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.180" />
+        <TextView
+            android:id="@+id/demo_tv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_16sdp"
+            android:layout_marginEnd="@dimen/_16sdp"
+            android:gravity="center"
+            android:padding="@dimen/_8sdp"
+            android:text="@string/this_is_how_your_name_will_apear_in_ibeor"
+            app:layout_constraintBottom_toTopOf="@+id/textView"
+            app:layout_constraintTop_toBottomOf="@+id/recover"
+            tools:layout_editor_absoluteX="16dp" />
 
-            <TextView
-                android:id="@+id/recover"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="140dp"
-                android:gravity="center"
-                android:padding="@dimen/_5sdp"
-                android:text="Enter your First Name"
-                android:textColor="@color/black"
-                android:textSize="@dimen/_16sdp"
-                android:textStyle="bold"
-                app:layout_constraintBottom_toTopOf="@+id/demo_tv"
-                app:layout_constraintEnd_toEndOf="@+id/demo_tv"
-                app:layout_constraintStart_toStartOf="@+id/demo_tv"
-                app:layout_constraintTop_toTopOf="parent"
-                tools:ignore="MissingConstraints" />
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_20sdp"
+            android:layout_marginBottom="@dimen/_8sdp"
+            android:gravity="start"
+            android:padding="@dimen/_3sdp"
+            android:text="@string/enter_your_name"
+            app:layout_constraintBottom_toTopOf="@+id/edt_email"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.06"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/demo_tv" />
 
-
-            <EditText
-                android:id="@+id/edt_email"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="@dimen/_16sdp"
-                android:layout_marginEnd="@dimen/_16sdp"
-                android:layout_marginBottom="@dimen/_10sdp"
-                android:background="@drawable/textfield_back"
-                android:drawableLeft="@drawable/mail_icon"
-                android:drawablePadding="@dimen/_5sdp"
-                android:gravity="left"
-                android:hint="@string/email_address"
-                android:paddingLeft="@dimen/_16sdp"
-                android:paddingTop="@dimen/_8sdp"
-                android:paddingRight="@dimen/_16sdp"
-                android:paddingBottom="@dimen/_8sdp"
-                android:text="@={firestnameviewmodmel.firstName}"
-                android:textColorHint="@color/black"
-                app:layout_constraintBottom_toTopOf="@+id/btnSign_in"
-                app:layout_constraintEnd_toEndOf="@+id/btnSign_in"
-                app:layout_constraintStart_toStartOf="@+id/btnSign_in"
-                app:layout_constraintTop_toBottomOf="@+id/textView"
-                tools:ignore="MissingConstraints" />
-
-            <TextView
-                android:id="@+id/demo_tv"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="@dimen/_26sdp"
-                android:layout_marginEnd="@dimen/_26sdp"
-                android:gravity="center"
-                android:padding="@dimen/_8sdp"
-                android:text="@string/this_is_how_your_name_will_apear_in_ibeor"
-                app:layout_constraintBottom_toTopOf="@+id/textView"
-                app:layout_constraintEnd_toEndOf="@+id/textView"
-                app:layout_constraintHorizontal_bias="0.5"
-                app:layout_constraintStart_toStartOf="@+id/textView"
-                app:layout_constraintTop_toBottomOf="@+id/recover" />
-
-            <TextView
-                android:id="@+id/textView"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="@dimen/_10sdp"
-                android:layout_marginTop="@dimen/_10sdp"
-                android:layout_marginEnd="@dimen/_16sdp"
-                android:layout_marginBottom="8dp"
-                android:gravity="start"
-                android:padding="@dimen/_3sdp"
-                android:text="@string/enter_your_name"
-                app:layout_constraintBottom_toTopOf="@+id/edt_email"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toStartOf="@+id/edt_email"
-                app:layout_constraintTop_toBottomOf="@+id/demo_tv" />
-
+        <androidx.cardview.widget.CardView
+            android:id="@+id/btnSign_in"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_26sdp"
+            android:layout_marginTop="@dimen/_20sdp"
+            android:layout_marginEnd="@dimen/_26sdp"
+            android:layout_marginBottom="264dp"
+            android:shadowColor="@color/light_black"
+            app:cardCornerRadius="@dimen/_23sdp"
+            app:cardElevation="@dimen/_10sdp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/edt_email">
 
             <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/btnSign_in"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="@dimen/_26sdp"
-                android:layout_marginEnd="@dimen/_26sdp"
-                android:layout_marginBottom="252dp"
+                android:layout_margin="@dimen/_3sdp"
                 android:background="@drawable/purple_back"
                 android:onClick="@{firestnameviewmodmel::continu}"
                 android:padding="@dimen/_5sdp"
                 android:text="Continue "
                 android:textAllCaps="false"
                 android:textColor="@color/white"
-                android:textSize="@dimen/_16sdp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                tools:layout_editor_absoluteX="0dp" />
+                android:textSize="@dimen/_16sdp" />
+
+        </androidx.cardview.widget.CardView>
 
 
-        </androidx.constraintlayout.widget.ConstraintLayout>
-    </layout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

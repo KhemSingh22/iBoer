@@ -4,6 +4,8 @@ import android.app.Activity
 import android.view.View
 import android.widget.Toast
 import androidx.lifecycle.ViewModel
+import androidx.navigation.Navigation
+import com.example.ibeor.R
 
 class AllowLocationViewModel(private var activity: Activity) : ViewModel() {
 
@@ -12,7 +14,7 @@ class AllowLocationViewModel(private var activity: Activity) : ViewModel() {
     }
 
     fun enableLocation(view: View) {
-        Toast.makeText(activity, "Your Location is enable", Toast.LENGTH_SHORT).show()
+        Navigation.findNavController(view).navigate(R.id.action_allowLocationFragment_to_genderFragment)
     }
 
     fun desableLocation(view: View) {

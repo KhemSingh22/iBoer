@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+    <layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        xmlns:app="http://schemas.android.com/apk/res-auto">
+
+        <data>
+            <variable
+                name="dobViewmodel"
+                type="com.example.ibeor.viewmodels.DobViewModel" />
+        </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".fragments.DOBFragment">
+
+
+        <ImageView
+            android:id="@+id/back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_16sdp"
+            android:layout_marginTop="@dimen/_16sdp"
+            android:onClick="@{dobViewmodel::onbackpress}"
+            android:src="@drawable/back_btn"
+            android:text="@string/allow_location"
+            android:textColor="@color/black"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <TextView
+            android:id="@+id/recover"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="140dp"
+            android:gravity="center"
+            android:padding="@dimen/_5sdp"
+            android:text="Whats your date of birth?"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_22sdp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@+id/tv_dob"
+            app:layout_constraintEnd_toEndOf="@+id/tv_dob"
+            app:layout_constraintStart_toStartOf="@+id/tv_dob"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="MissingConstraints" />
+
+
+        <TextView
+            android:id="@+id/tv_age"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_16sdp"
+            android:layout_marginTop="@dimen/_16sdp"
+            android:layout_marginEnd="@dimen/_16sdp"
+            android:gravity="center"
+            android:textStyle="bold"
+            android:padding="@dimen/_3sdp"
+            android:textSize="@dimen/_10sdp"
+            android:text="@string/age_28"
+            android:textColor="@color/black"
+            app:layout_constraintBottom_toTopOf="@+id/textView"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_dob"
+            />
+
+        <TextView
+            android:id="@+id/tv_dob"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_16sdp"
+            android:layout_marginTop="@dimen/_16sdp"
+            android:layout_marginEnd="@dimen/_16sdp"
+            android:layout_marginBottom="@dimen/_10sdp"
+            android:background="@drawable/textfield_back"
+            android:drawableRight="@drawable/calender_icon"
+            android:onClick="@{dobViewmodel::openCalender}"
+            android:drawablePadding="@dimen/_5sdp"
+            android:gravity="left"
+            android:paddingLeft="@dimen/_16sdp"
+            android:paddingTop="@dimen/_8sdp"
+            android:paddingRight="@dimen/_16sdp"
+            android:paddingBottom="@dimen/_8sdp"
+            android:hint="@string/dd_mm_yy"
+            android:text="@={dobViewmodel.dob}"
+            android:textColorHint="@color/black"
+            app:layout_constraintBottom_toTopOf="@+id/textView"
+            app:layout_constraintEnd_toEndOf="@+id/textView"
+            app:layout_constraintStart_toStartOf="@+id/textView"
+            app:layout_constraintTop_toBottomOf="@+id/recover" />
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="start"
+            android:padding="@dimen/_3sdp"
+            android:text="@string/this_can_t_be_changed_later"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_age" />
+
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/btnSign_in"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_26sdp"
+            android:layout_marginEnd="@dimen/_26sdp"
+            android:shadowColor="@color/light_black"
+            app:cardCornerRadius="@dimen/_23sdp"
+            app:cardElevation="@dimen/_10sdp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView"
+            app:layout_constraintVertical_bias="0.188">
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/_3sdp"
+                android:background="@drawable/purple_back"
+                android:onClick="@{dobViewmodel::Continu}"
+                android:padding="@dimen/_5sdp"
+                android:text="Continue"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_16sdp"
+
+                />
+
+        </androidx.cardview.widget.CardView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </layout>

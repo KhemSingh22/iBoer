@@ -5,6 +5,8 @@ import android.content.Intent
 import android.view.View
 import android.widget.Toast
 import androidx.lifecycle.ViewModel
+import androidx.navigation.Navigation
+import com.example.ibeor.R
 import com.example.ibeor.activities.SignInWithActivity
 
 class LoginViewModel(var activity: Activity) : ViewModel() {
@@ -14,7 +16,7 @@ class LoginViewModel(var activity: Activity) : ViewModel() {
     }
 
     fun signIn(view: View) {
-        Toast.makeText(activity, "Working signIn ", Toast.LENGTH_SHORT).show()
+        Navigation.findNavController(view).navigate(R.id.action_signin_activity_to_genderFragment2)
     }
 
     fun troubleSigning(view: View) {

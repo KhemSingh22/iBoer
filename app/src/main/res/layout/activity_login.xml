@@ -21,62 +21,108 @@
             android:layout_margin="@dimen/_26sdp"
             android:padding="@dimen/_10sdp"
             android:src="@drawable/splash_logo"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.128"
-            tools:layout_editor_absoluteX="33dp" />
+            app:layout_constraintBottom_toBottomOf="@+id/btn_create_Accont"
+            app:layout_constraintEnd_toEndOf="@+id/btn_create_Accont"
+            app:layout_constraintHorizontal_bias="0.275"
+            app:layout_constraintStart_toStartOf="@+id/btn_create_Accont"
+            app:layout_constraintTop_toTopOf="parent" />
 
-        <androidx.appcompat.widget.AppCompatButton
+        <androidx.cardview.widget.CardView
             android:id="@+id/btn_create_Accont"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="180dp"
-            android:background="@drawable/green_back"
-            android:text="@string/create_account"
-            android:textAllCaps="false"
-            android:textColor="@color/white"
-            android:onClick="@{loginviewmodel::createAccount}"
-            android:layout_marginStart="@dimen/_26sdp"
-            android:layout_marginEnd="@dimen/_26sdp"
-            android:textSize="@dimen/_16sdp"
+            android:layout_marginBottom="@dimen/_10sdp"
+            android:shadowColor="@color/light_black"
+            android:layout_marginTop="@dimen/_80sdp"
+            android:shadowRadius="@android:integer/config_shortAnimTime"
+            app:cardCornerRadius="@dimen/_23sdp"
+            app:cardElevation="@dimen/_10sdp"
             app:layout_constraintBottom_toTopOf="@+id/btnSign_in"
-            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/btnSign_in"
             app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/img" />
+            app:layout_constraintStart_toStartOf="@+id/btnSign_in"
+            app:layout_constraintTop_toBottomOf="@+id/img">
 
-        <androidx.appcompat.widget.AppCompatButton
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/_3sdp">
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="100dp"
+                    android:layout_marginEnd="@dimen/_26sdp"
+                    android:background="@drawable/green_back"
+                    android:onClick="@{loginviewmodel::createAccount}"
+                    android:text="@string/create_account"
+                    android:textAllCaps="false"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/_16sdp"
+                    tools:ignore="MissingConstraints" />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        </androidx.cardview.widget.CardView>
+
+
+        <androidx.cardview.widget.CardView
             android:id="@+id/btnSign_in"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/_16sdp"
-            android:background="@drawable/purple_back"
-            android:text="@string/sign_in"
             android:layout_marginStart="@dimen/_26sdp"
             android:layout_marginEnd="@dimen/_26sdp"
-            android:textAllCaps="false"
-            android:textColor="@color/white"
-            android:onClick="@{loginviewmodel::signIn}"
-            android:textSize="@dimen/_16sdp"
+            android:layout_marginBottom="@dimen/_10sdp"
+            android:shadowColor="@color/light_black"
+            android:shadowRadius="@android:integer/config_shortAnimTime"
+            app:cardCornerRadius="@dimen/_23sdp"
+            app:cardElevation="@dimen/_10sdp"
             app:layout_constraintBottom_toTopOf="@+id/demo_tv"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/btn_create_Accont" />
+            app:layout_constraintTop_toBottomOf="@+id/btn_create_Accont">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/_3sdp">
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_26sdp"
+                    android:layout_marginTop="@dimen/_16sdp"
+                    android:layout_marginEnd="@dimen/_26sdp"
+                    android:background="@drawable/purple_back"
+                    android:onClick="@{loginviewmodel::signIn}"
+                    android:text="@string/sign_in"
+                    android:textAllCaps="false"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/_16sdp"
+                    tools:ignore="MissingConstraints" />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        </androidx.cardview.widget.CardView>
+
 
         <TextView
             android:id="@+id/demo_tv"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/_26sdp"
-            android:layout_marginTop="@dimen/_16sdp"
-            android:layout_marginEnd="@dimen/_26sdp"
+            android:layout_marginStart="@dimen/_12sdp"
+            android:layout_marginEnd="@dimen/_12sdp"
             android:padding="@dimen/_8sdp"
             android:text="@string/by_tapping_create_account_or_sign_in_you_agree_to_our_terms_learn_how_we_process_your_data_on_our_privacy_or_policy_and_cookies_policy"
             app:layout_constraintBottom_toTopOf="@+id/truble_signin"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/btnSign_in"
+            app:layout_constraintHorizontal_bias="0.506"
+            app:layout_constraintStart_toStartOf="@+id/btnSign_in"
             app:layout_constraintTop_toBottomOf="@+id/btnSign_in" />
 
         <TextView
@@ -85,19 +131,18 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/_16sdp"
             android:gravity="center"
+            android:onClick="@{loginviewmodel::troubleSigning}"
             android:padding="@dimen/_8sdp"
             android:text="@string/trouble_signing_in"
             android:textColor="@color/red"
             android:textSize="@dimen/_16sdp"
             android:textStyle="bold"
-            android:onClick="@{loginviewmodel::troubleSigning}"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toStartOf="parent"
-            android:layout_marginBottom="@dimen/_16sdp"
+            app:layout_constraintEnd_toEndOf="@+id/demo_tv"
+            app:layout_constraintHorizontal_bias="0.502"
+            app:layout_constraintStart_toStartOf="@+id/demo_tv"
             app:layout_constraintTop_toBottomOf="@+id/demo_tv"
-            app:layout_constraintVertical_bias="0.272" />
+            app:layout_constraintVertical_bias="0.344" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

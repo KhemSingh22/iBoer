@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/signin_navigation"
+    app:startDestination="@id/loginActivity">
+
+    <activity
+        android:id="@+id/loginActivity"
+        android:name="com.example.ibeor.activities.activities.LoginActivity"
+        android:label="LoginActivity" >
+        <action
+            android:id="@+id/action_signin_activity_to_genderFragment2"
+            app:destination="@id/genderFragment2" />
+    </activity>
+    <fragment
+        android:id="@+id/genderFragment2"
+        android:name="com.example.ibeor.fragments.GenderFragment"
+        android:label="GenderFragment" >
+        <action
+            android:id="@+id/action_DOBFragment2_to_genderFragment2"
+            app:destination="@id/DOBFragment2" />
+    </fragment>
+    <fragment
+        android:id="@+id/DOBFragment2"
+        android:name="com.example.ibeor.fragments.DOBFragment"
+        android:label="fragment_d_o_b"
+        tools:layout="@layout/fragment_d_o_b" >
+        <action
+            android:id="@+id/action_DOBFragment2_to_genderFragment2"
+            app:destination="@id/genderFragment2" />
+    </fragment>
+</navigation>

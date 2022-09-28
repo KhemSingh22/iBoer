@@ -11,7 +11,6 @@ import com.example.ibeor.ViewModelFactries.AllowLocationViewModelFact
 import com.example.ibeor.databinding.FragmentAllowLocationBinding
 import com.example.ibeor.viewmodels.AllowLocationViewModel
 
-
 class AllowLocationFragment : Fragment() {
     lateinit var binding: FragmentAllowLocationBinding
     lateinit var viewmodel: AllowLocationViewModel
