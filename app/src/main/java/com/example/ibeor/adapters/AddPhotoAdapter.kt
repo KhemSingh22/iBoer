@@ -1,5 +1,7 @@
 package com.example.ibeor.adapters
 import android.content.Context
+import android.graphics.Color
+import android.graphics.drawable.ColorDrawable
 import android.opengl.Visibility
 import android.view.LayoutInflater
 import android.view.View
@@ -38,6 +40,7 @@ class AddPhotoAdapter(private val photos: ArrayList<AddPhoto>, var context: Cont
     private fun bottomPopup() {
         val bottomSheetDialog = BottomSheetDialog(context ,R.style.NewDialog)
         bottomSheetDialog.setCancelable(true)
+        bottomSheetDialog.window!!.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
         bottomSheetDialog.setContentView(R.layout.bottom_sheet_dialog)
         val galary = bottomSheetDialog.findViewById<ImageView>(R.id.iv_galary)
         val camera = bottomSheetDialog.findViewById<ImageView>(R.id.iv_camera)

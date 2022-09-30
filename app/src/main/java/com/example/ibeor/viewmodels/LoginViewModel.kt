@@ -16,7 +16,7 @@ class LoginViewModel(var activity: Activity) : ViewModel() {
     }
 
     fun signIn(view: View) {
-        Navigation.findNavController(view).navigate(R.id.action_signin_activity_to_genderFragment2)
+//        Navigation.findNavController(view).navigate(R.id.)
     }
 
     fun troubleSigning(view: View) {

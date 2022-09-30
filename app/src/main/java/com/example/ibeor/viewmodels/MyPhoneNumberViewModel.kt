@@ -2,6 +2,8 @@ package com.example.ibeor.viewmodels
 
 import android.app.Activity
 import android.app.Dialog
+import android.graphics.Color
+import android.graphics.drawable.ColorDrawable
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
@@ -29,8 +31,8 @@ class MyPhoneNumberViewModel(var activity: Activity) : ViewModel() {
 
     private fun showpopUp(view: View) {
         dialog.setContentView(R.layout.invalid_no_layout)
-        dialog.getWindow()!!
-            .setLayout(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT)
+        dialog.window!!.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
+        dialog.getWindow()!!.setLayout(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT)
         dialog.setCancelable(true)
         val ok = dialog.findViewById<CardView>(R.id.okay)
 

@@ -121,6 +121,14 @@
         android:id="@+id/madeitFragment"
         android:name="com.example.ibeor.fragments.MadeitFragment"
         android:label="fragment_madeit"
-        tools:layout="@layout/fragment_madeit" />
+        tools:layout="@layout/fragment_madeit" >
+        <action
+            android:id="@+id/action_madeitFragment_to_mainActivity"
+            app:destination="@id/mainActivity" />
+    </fragment>
+    <activity
+        android:id="@+id/mainActivity"
+        android:name="com.example.ibeor.activities.activities.MainActivity"
+        android:label="MainActivity" />
 
 </navigation>

@@ -2,6 +2,8 @@ package com.example.ibeor.viewmodels
 
 import android.app.Activity
 import android.app.Dialog
+import android.graphics.Color
+import android.graphics.drawable.ColorDrawable
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
@@ -14,7 +16,7 @@ import com.google.android.material.bottomsheet.BottomSheetDialog
 class DobViewModel(var activity: Activity) : ViewModel() {
 
     var dob: String? = null
-    var dialog = Dialog(activity)
+    lateinit var dialog : Dialog
     fun Continu(view: View) {
         openPopup(view)
     }
@@ -26,8 +28,11 @@ class DobViewModel(var activity: Activity) : ViewModel() {
     private fun openPopup(view: View) {
 
 
-      val   dialog = Dialog(activity,R.style.roundcorner_popup)
+//      val   dialog = Dialog(activity,R.style.roundcorner_popup)
+      val   dialog = Dialog(activity)
         dialog.setContentView(R.layout.confirm_info)
+        dialog.window!!.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
+
         dialog.getWindow()!!.setLayout(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT)
         dialog.setCancelable(false)
         val tv_edit = dialog.findViewById<CardView>(R.id.tv_edit)

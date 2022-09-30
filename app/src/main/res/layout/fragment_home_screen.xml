@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="homeVM"
+            type="com.example.ibeor.viewmodels.HomeScreenViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/main_back"
+        tools:context=".fragments.HomeScreenFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/cons_ly"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/main_back"
+        tools:context=".fragments.HomeScreenFragment"
+        tools:ignore="MissingConstraints">
+        <RelativeLayout
+            android:id="@+id/profile_image"
+            android:layout_width="@dimen/_40sdp"
+            android:layout_height="@dimen/_40sdp"
+            android:layout_marginStart="@dimen/_12sdp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:onClick="@{homeVM::openProfile}"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="OnClick">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:layout_width="@dimen/_35sdp"
+                android:layout_height="@dimen/_35sdp"
+                android:layout_centerInParent="true"
+                android:layout_marginStart="@dimen/_12sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:src="@drawable/profile_icon" />
+
+            <ProgressBar
+                android:id="@+id/progress_bar"
+                style="?android:attr/progressBarStyleHorizontal"
+                android:layout_width="@dimen/_40sdp"
+                android:layout_height="@dimen/_40sdp"
+                android:layout_centerInParent="true"
+                android:background="@drawable/circular_shape"
+                android:indeterminate="false"
+                android:progressDrawable="@drawable/circular_progress_bar"
+                android:textAlignment="center" />
+
+            <TextView
+                android:id="@+id/progress_text"
+                android:layout_width="@dimen/_40sdp"
+                android:layout_height="12sp"
+                android:layout_alignParentBottom="true"
+                android:background="@drawable/progress_back"
+                android:gravity="center"
+                android:padding="2sp"
+                android:text="@string/ontinue"
+                android:textColor="@color/white"
+                android:textSize="5sp" />
+        </RelativeLayout>
+
+        <ImageView
+            android:layout_width="@dimen/_150sdp"
+            android:layout_height="@dimen/_30sdp"
+            android:layout_marginStart="@dimen/_12sdp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:src="@drawable/splash_logo"
+            app:layout_constraintEnd_toStartOf="@+id/dateing_pref"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/profile_image"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/dateing_pref"
+            android:layout_width="@dimen/_30sdp"
+            android:layout_height="@dimen/_30sdp"
+            android:layout_marginStart="@dimen/_12sdp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:layout_marginEnd="@dimen/_12sdp"
+            android:src="@drawable/date_pref"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/cons_lay2"
+            android:layout_width="match_parent"
+            android:paddingTop="@dimen/_10sdp"
+            app:layout_constraintTop_toBottomOf="@+id/cons_ly"
+            android:layout_height="wrap_content">
+            <View
+                android:id="@+id/view_line"
+                android:layout_width="match_parent"
+                android:layout_height="1sp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:background="@color/light1_black"
+
+
+                tools:ignore="MissingConstraints" />
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/crashiv"
+                android:layout_width="@dimen/_30sdp"
+                android:layout_height="@dimen/_30sdp"
+                android:layout_marginStart="@dimen/_12sdp"
+                android:layout_marginTop="@dimen/_14sdp"
+                android:src="@drawable/crash_icon"
+                app:layout_constraintEnd_toStartOf="@+id/photos_iv"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/view_line" />
+
+            <ImageView
+                android:id="@+id/photos_iv"
+                android:layout_width="@dimen/_30sdp"
+                android:layout_height="@dimen/_30sdp"
+                android:layout_marginStart="@dimen/_12sdp"
+                android:layout_marginTop="@dimen/_14sdp"
+                android:src="@drawable/photos_icon"
+                app:layout_constraintEnd_toStartOf="@+id/likes_iv"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/crashiv"
+                app:layout_constraintTop_toBottomOf="@+id/view_line" />
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/likes_iv"
+                android:layout_width="@dimen/_30sdp"
+                android:layout_height="@dimen/_30sdp"
+                android:layout_marginStart="@dimen/_12sdp"
+                android:layout_marginTop="@dimen/_14sdp"
+                android:src="@drawable/likes_icon"
+                app:layout_constraintEnd_toStartOf="@+id/chat_iv"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/photos_iv"
+                app:layout_constraintTop_toBottomOf="@+id/view_line" />
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/chat_iv"
+                android:layout_width="@dimen/_30sdp"
+                android:layout_height="@dimen/_30sdp"
+                android:layout_marginStart="@dimen/_12sdp"
+                android:layout_marginTop="@dimen/_14sdp"
+                android:src="@drawable/chat_icon"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/likes_iv"
+                app:layout_constraintTop_toBottomOf="@+id/view_line" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+        <com.yuyakaido.android.cardstackview.CardStackView
+            android:id="@+id/stack_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:layout_marginStart="@dimen/_12sdp"
+            android:layout_marginBottom="@dimen/_16sdp"
+            android:layout_marginEnd="@dimen/_12sdp"
+            app:layout_constraintTop_toBottomOf="@+id/cons_lay2" />
+
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

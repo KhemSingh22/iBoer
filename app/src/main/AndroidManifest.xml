@@ -13,6 +13,9 @@
         android:theme="@style/Theme.IBeor"
         tools:targetApi="31">
         <activity
+            android:name=".MyDetailsActivity"
+            android:exported="false" />
+        <activity
             android:name=".activities.AccountRecoveryActivity"
             android:exported="false" />
         <activity
