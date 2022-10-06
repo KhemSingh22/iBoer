@@ -26,7 +26,6 @@ import com.yuyakaido.android.cardstackview.*
 class HomeScreenFragment : Fragment(), CardStackListener {
     lateinit var binding: FragmentHomeScreenBinding
     lateinit var viewmodel: HomeScreenViewModel
-   private var layoutHight : Int = 0
     private var TotalWidth = 0
     private var TotalHight = 0
     var i = 0
@@ -86,6 +85,7 @@ class HomeScreenFragment : Fragment(), CardStackListener {
             }
         })
     }
+
 //    val viewTreeObserver1 : ViewTreeObserver = binding.consLay2.getViewTreeObserver()
 //    if (viewTreeObserver1.isAlive) {
 //        viewTreeObserver1.addOnGlobalLayoutListener(object : OnGlobalLayoutListener {
@@ -99,6 +99,7 @@ class HomeScreenFragment : Fragment(), CardStackListener {
 //    }
 
 }
+
     private fun actualHight(layoutHight: Int) {
         val hight = layoutHight - 20
         val cardHight = TotalHight- hight
@@ -138,6 +139,7 @@ class HomeScreenFragment : Fragment(), CardStackListener {
             .setDuration(Duration.Normal.duration)
             .setInterpolator(AccelerateInterpolator())
             .build()
+
         binding.stackView.layoutManager =CardStackLayoutManager(context,this)
         layoutManager.setSwipeableMethod(SwipeableMethod.AutomaticAndManual)
         layoutManager.setSwipeAnimationSetting(setting)
@@ -147,15 +149,15 @@ class HomeScreenFragment : Fragment(), CardStackListener {
         layoutManager.setCanScrollHorizontal(true)
         layoutManager.setCanScrollVertical(false)
 
-        adapter = StackCardAdapter(requireActivity(),dataList)
+        adapter = StackCardAdapter(requireActivity(),dataList,view)
         binding.stackView.adapter = adapter
         binding.stackView.itemAnimator.apply {
+
             if (this is DefaultItemAnimator) {
                 supportsChangeAnimations = false
             }
 
         }
-
 
     }
 
@@ -199,9 +201,9 @@ class HomeScreenFragment : Fragment(), CardStackListener {
     }
 
     @SuppressLint("NotifyDataSetChanged")
-    override fun onCardDisappeared(view: View?, position: Int) {
+    override fun onCardDisappeared(view : View?, position: Int) {
         if (position==dataList.size-1){
-            adapter = StackCardAdapter(requireActivity(),dataList)
+            adapter = StackCardAdapter(requireActivity(), dataList, view)
             binding.stackView.adapter = adapter
             adapter.notifyDataSetChanged()
         }

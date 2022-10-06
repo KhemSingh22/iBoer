@@ -27,13 +27,7 @@ class AddPhotoFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
 
-        binding = FragmentAddPhotoBinding.bind(
-            inflater.inflate(
-                R.layout.fragment_add_photo,
-                container,
-                false
-            )
-        )
+        binding = FragmentAddPhotoBinding.bind(inflater.inflate(R.layout.fragment_add_photo, container, false))
         viewModel =
             ViewModelProvider(this@AddPhotoFragment, AddPhotoViewModelFact(requireActivity())).get(
                 AddPhotoViewModel::class.java

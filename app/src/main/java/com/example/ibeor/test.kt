@@ -20,4 +20,5 @@ class MainActivity : AppCompatActivity() {
         progressText = findViewById(R.id.progress_text)
 
     }
+
 }

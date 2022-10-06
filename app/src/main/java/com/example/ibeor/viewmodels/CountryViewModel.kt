@@ -10,8 +10,7 @@ class CountryViewModel(var activity: Activity) : ViewModel() {
     var spinnerValue: String? = null
 
     fun continu(view: View) {
-        Navigation.findNavController(view)
-            .navigate(R.id.action_selectCountryFragment_to_welComeFragment)
+        Navigation.findNavController(view).navigate(R.id.action_selectCountryFragment_to_welComeFragment)
     }
 
     fun onback(view: View) {

@@ -9,20 +9,14 @@ import com.example.ibeor.databinding.ViewPagerItemBinding
 import com.example.ibeor.dataclasses.ViewPagerModel
 
 
-class ViewPagerAdapter(
-    var requireActivity: FragmentActivity,
+class ViewPagerAdapter(var requireActivity: FragmentActivity,
     var dataList: ArrayList<ViewPagerModel>
 ) :
     RecyclerView.Adapter<ViewPagerAdapter.ViewPagerViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewPagerViewHolder {
         return ViewPagerViewHolder(
-            ViewPagerItemBinding.inflate(
-                LayoutInflater.from(parent.context),
-                parent,
-                false
-            )
-        )
+            ViewPagerItemBinding.inflate(LayoutInflater.from(parent.context), parent, false))
     }
 
     override fun onBindViewHolder(holder: ViewPagerViewHolder, position: Int) {

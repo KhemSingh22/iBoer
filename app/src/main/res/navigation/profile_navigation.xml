@@ -12,6 +12,9 @@
         <action
             android:id="@+id/action_homeScreenFragment_to_myDetailsFragment"
             app:destination="@id/myDetailsFragment" />
+        <action
+            android:id="@+id/action_homeScreenFragment_to_openDetailsFragment"
+            app:destination="@id/openDetailsFragment" />
     </fragment>
     <fragment
         android:id="@+id/myDetailsFragment"
@@ -45,6 +48,14 @@
         android:id="@+id/datePrefrencesFragment"
         android:name="com.example.ibeor.fragments.DatePrefrencesFragment"
         android:label="fragment_date_prefrences"
-        tools:layout="@layout/fragment_date_prefrences" />
+        tools:layout="@layout/fragment_date_prefrences" >
+        <action
+            android:id="@+id/action_datePrefrencesFragment_to_openDetailsFragment"
+            app:destination="@id/openDetailsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/openDetailsFragment"
+        android:name="com.example.ibeor.fragments.OpenDetailsFragment"
+        android:label="OpenDetailsFragment" />
 
 </navigation>

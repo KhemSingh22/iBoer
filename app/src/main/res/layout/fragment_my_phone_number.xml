@@ -13,7 +13,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".activities.fragments.MyPhoneNumberFragment">
+        tools:context=".fragments.MyPhoneNumberFragment">
 
         <ImageView
             android:id="@+id/back"
@@ -73,10 +73,10 @@
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="@dimen/_10sdp"
                 android:backgroundTint="@color/white"
-                android:drawableLeft="@drawable/flag"
-                android:drawableRight="@drawable/path"
-                android:drawablePadding="@dimen/_5sdp"
-                android:hint="(+1) "
+                android:drawableStart="@drawable/flag"
+                android:drawableEnd="@drawable/path"
+                android:drawablePadding="@dimen/_8sdp"
+                android:hint="@string/_1"
                 android:text="@={myphonenoviewmodel.phone_Code}"
                 android:textColorHint="@color/black"
                 app:layout_constraintBottom_toTopOf="@+id/textView2"
@@ -99,7 +99,8 @@
                 android:layout_marginBottom="@dimen/_10sdp"
                 android:backgroundTint="@color/white"
                 android:drawablePadding="@dimen/_5sdp"
-                android:hint="331-623-8413"
+                android:hint="@string/_331_623_8413"
+                android:inputType="number"
                 android:text="@={myphonenoviewmodel.phoneNumber}"
                 android:textColorHint="@color/black"
                 app:layout_constraintBottom_toTopOf="@+id/textView2"

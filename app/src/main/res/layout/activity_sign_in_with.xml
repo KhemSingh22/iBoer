@@ -123,7 +123,7 @@
                     android:text="@string/facebook"
                     android:textAllCaps="false"
                     android:textColor="@color/white"
-                    android:textSize="@dimen/_16sdp"
+                    android:textSize="@dimen/_12sdp"
                     tools:ignore="MissingConstraints" />
 
                 <ImageView
@@ -173,19 +173,19 @@
                     android:background="@drawable/purple_back"
                     android:gravity="center"
                     android:onClick="@{signinviewmodel::applelogin}"
-
+                    app:icon="@drawable/g_login"
                     android:text="@string/google"
                     android:textAllCaps="false"
                     android:textColor="@color/white"
-                    android:textSize="@dimen/_16sdp"
-
+                    android:textSize="@dimen/_12sdp"
                     tools:ignore="MissingConstraints" />
 
 
                 <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:src="@drawable/apple_icon"
+                    android:id="@+id/g_login_icon"
+                    android:layout_width="@dimen/_15sdp"
+                    android:layout_height="@dimen/_15sdp"
+                    android:src="@drawable/g_login"
                     android:translationZ="2dp"
                     app:layout_constraintBottom_toBottomOf="@+id/g_login"
                     app:layout_constraintEnd_toEndOf="@+id/g_login"

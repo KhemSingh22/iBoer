@@ -12,7 +12,7 @@ import com.example.ibeor.R
 
 @SuppressLint("CustomSplashScreen")
 class SplashActivity : AppCompatActivity() {
-    private val SPLASH_TIME_OUT = 3000L
+    private val SPLASH_TIME_OUT = 4000L
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

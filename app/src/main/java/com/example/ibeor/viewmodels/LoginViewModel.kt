@@ -1,25 +1,23 @@
 package com.example.ibeor.activities.activities.viewmodels
-
-import android.app.Activity
-import android.content.Intent
 import android.view.View
-import android.widget.Toast
 import androidx.lifecycle.ViewModel
 import androidx.navigation.Navigation
 import com.example.ibeor.R
-import com.example.ibeor.activities.SignInWithActivity
 
-class LoginViewModel(var activity: Activity) : ViewModel() {
-    fun createAccount(view: View) {
-        var intent = Intent(activity, SignInWithActivity::class.java)
-        activity.startActivity(intent)
+
+class LoginViewModel() : ViewModel() {
+
+    fun createAccount(view : View) {
+      Navigation.findNavController(view).navigate(R.id.action_loginFragment_to_signInWithFragment)
     }
 
     fun signIn(view: View) {
-//        Navigation.findNavController(view).navigate(R.id.)
+        Navigation.findNavController(view).navigate(R.id.action_loginFragment_to_myPhoneNumberFragment2)
+
     }
 
     fun troubleSigning(view: View) {
-        Toast.makeText(activity, "Working troubleSigning", Toast.LENGTH_SHORT).show()
+        Navigation.findNavController(view).navigate(R.id.action_loginFragment_to_accountRecoeryFragment2)
     }
-}
+
+ }

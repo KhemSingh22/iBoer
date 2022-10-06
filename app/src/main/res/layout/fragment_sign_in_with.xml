@@ -1,0 +1,238 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools">
+
+        <data>
+
+            <variable
+                name="signinviewmodel"
+                type="com.example.ibeor.viewmodels.SignWithViewModel" />
+        </data>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:context=".fragments.SignInWithFragment">
+
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_16sdp"
+                android:layout_marginTop="@dimen/_16sdp"
+                android:onClick="@{signinviewmodel::onback}"
+                android:src="@drawable/back_btn"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+            <ImageView
+                android:id="@+id/img"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_100sdp"
+                android:layout_margin="@dimen/_26sdp"
+                android:padding="@dimen/_10sdp"
+                android:src="@drawable/splash_logo"
+                app:layout_constraintBottom_toTopOf="@+id/btn_call"
+                app:layout_constraintTop_toBottomOf="@+id/imageView"
+                tools:layout_editor_absoluteX="42dp" />
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/btn_call"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_26sdp"
+                android:layout_marginTop="50dp"
+                android:layout_marginEnd="@dimen/_26sdp"
+                android:layout_marginBottom="@dimen/_10sdp"
+                android:shadowColor="@color/light_black"
+                android:shadowRadius="@android:integer/config_shortAnimTime"
+                app:cardCornerRadius="@dimen/_23sdp"
+                app:cardElevation="@dimen/_10sdp"
+                app:layout_constraintBottom_toTopOf="@+id/fb_login"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/img">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/_3sdp">
+
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/icon_phone"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:stateListAnimator="@null"
+                        android:layout_margin="@dimen/_2sdp"
+                        android:background="@drawable/green_back"
+                        android:onClick="@{signinviewmodel::phoneNumber}"
+                        android:text="@string/phone_number"
+                        android:textAllCaps="false"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/_12sdp"
+                        tools:ignore="MissingConstraints" />
+
+                    <ImageView
+                        android:id="@+id/phone_icon"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="start"
+                        android:layout_marginStart="@dimen/_16sdp"
+                        android:paddingTop="@dimen/_3sdp"
+                        android:src="@drawable/call_icon"
+                        app:layout_constraintBottom_toBottomOf="@+id/icon_phone"
+                        app:layout_constraintEnd_toEndOf="@+id/icon_phone"
+                        app:layout_constraintHorizontal_bias="0.073"
+                        app:layout_constraintStart_toStartOf="@+id/icon_phone"
+                        app:layout_constraintTop_toBottomOf="@+id/icon_phone"
+                        app:layout_constraintTop_toTopOf="@+id/icon_phone" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+            </androidx.cardview.widget.CardView>
+
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/fb_login"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/_10sdp"
+                android:shadowColor="@color/light_black"
+                android:shadowRadius="@android:integer/config_shortAnimTime"
+                app:cardCornerRadius="@dimen/_23sdp"
+                app:cardElevation="@dimen/_10sdp"
+                app:layout_constraintBottom_toTopOf="@+id/google_login"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/btn_call">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/_3sdp">
+
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/fb"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/fb_icon"
+                        android:onClick="@{signinviewmodel::fb_login}"
+                        android:text="@string/facebook"
+                        android:stateListAnimator="@null"
+                        android:textAllCaps="false"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/_12sdp"
+                        tools:ignore="MissingConstraints" />
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="@dimen/_15sdp"
+                        android:src="@drawable/fb_"
+                        app:layout_constraintBottom_toBottomOf="@+id/fb"
+                        app:layout_constraintEnd_toEndOf="@+id/fb"
+                        app:layout_constraintHorizontal_bias="0.261"
+                        app:layout_constraintStart_toStartOf="@+id/fb"
+                        app:layout_constraintTop_toTopOf="@+id/fb"
+                        app:layout_constraintVertical_bias="0.529" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+            </androidx.cardview.widget.CardView>
+
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/google_login"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/_10sdp"
+                app:layout_constraintBottom_toTopOf="@+id/demo_tv"
+                android:shadowColor="@color/light_black"
+                android:shadowRadius="@android:integer/config_shortAnimTime"
+                app:cardCornerRadius="@dimen/_23sdp"
+                app:cardElevation="@dimen/_10sdp"
+
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/fb_login">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/_3sdp">
+
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/g_login"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/purple_back"
+                        android:gravity="center"
+                        android:onClick="@{signinviewmodel::applelogin}"
+                        app:icon="@drawable/g_login"
+                        android:text="@string/google"
+                        android:stateListAnimator="@null"
+                        android:textAllCaps="false"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/_12sdp"
+                        tools:ignore="MissingConstraints" />
+
+
+                    <ImageView
+                        android:id="@+id/g_login_icon"
+                        android:layout_width="@dimen/_15sdp"
+                        android:layout_height="@dimen/_15sdp"
+                        android:src="@drawable/g_login"
+                        app:layout_constraintBottom_toBottomOf="@+id/g_login"
+                        app:layout_constraintEnd_toEndOf="@+id/g_login"
+                        android:layout_marginEnd="@dimen/_16sdp"
+                        app:layout_constraintHorizontal_bias="0.319"
+                        app:layout_constraintStart_toStartOf="@+id/g_login"
+                        app:layout_constraintTop_toTopOf="@+id/g_login"
+                        app:layout_constraintVertical_bias="0.583" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+            </androidx.cardview.widget.CardView>
+
+            <TextView
+                android:id="@+id/demo_tv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_26sdp"
+                android:layout_marginTop="@dimen/_16sdp"
+                android:layout_marginEnd="@dimen/_26sdp"
+                android:padding="@dimen/_8sdp"
+                android:text="@string/by_tapping_create_account_or_sign_in_you_agree_to_our_terms_learn_how_we_process_your_data_on_our_privacy_or_policy_and_cookies_policy"
+                app:layout_constraintBottom_toTopOf="@+id/truble_signin"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/google_login" />
+
+            <TextView
+                android:id="@+id/truble_signin"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_16sdp"
+                android:layout_marginBottom="@dimen/_16sdp"
+                android:gravity="center"
+                android:padding="@dimen/_8sdp"
+                android:text="@string/trouble_signing_in"
+                android:textColor="@color/red"
+                android:textSize="@dimen/_16sdp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/demo_tv"
+                app:layout_constraintVertical_bias="0.272" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </layout>

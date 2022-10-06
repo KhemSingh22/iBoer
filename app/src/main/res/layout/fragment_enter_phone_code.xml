@@ -13,7 +13,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".activities.fragments.EnterPhoneCodeFragment">
+        tools:context=".fragments.EnterPhoneCodeFragment">
 
         <ImageView
             android:id="@+id/back"
@@ -46,7 +46,7 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <in.aabhasjindal.otptextview.OtpTextView
-            android:id="@+id/ln"
+            android:id="@+id/otp_view"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/_10sdp"
@@ -86,9 +86,7 @@
             android:textColor="@color/black"
             android:textSize="@dimen/_10sdp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/ln"
-
-            />
+            app:layout_constraintTop_toBottomOf="@+id/otp_view"/>
 
         <TextView
             android:id="@+id/demo_tv"
@@ -116,10 +114,10 @@
             android:gravity="start"
             android:padding="@dimen/_3sdp"
             android:text="Enter OTP"
-            app:layout_constraintBottom_toTopOf="@+id/ln"
+            app:layout_constraintBottom_toTopOf="@+id/otp_view"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="@+id/ln"
+            app:layout_constraintStart_toStartOf="@+id/otp_view"
             app:layout_constraintTop_toBottomOf="@+id/demo_tv" />
 
         <TextView
@@ -133,10 +131,10 @@
             android:gravity="start"
             android:padding="@dimen/_3sdp"
             android:text="00:45"
-            app:layout_constraintBottom_toTopOf="@+id/ln"
+            app:layout_constraintBottom_toTopOf="@+id/otp_view"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="1.0"
-            app:layout_constraintStart_toStartOf="@+id/ln"
+            app:layout_constraintStart_toStartOf="@+id/otp_view"
             app:layout_constraintTop_toBottomOf="@+id/demo_tv" />
 
         <androidx.cardview.widget.CardView
@@ -152,13 +150,14 @@
             app:layout_constraintTop_toBottomOf="@+id/resend"
             android:layout_height="wrap_content">
             <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/btnSign_in"
+                android:id="@+id/btn_conti"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@drawable/purple_back"
-                android:onClick="@{phonecodeviewmodel::continu}"
                 android:padding="@dimen/_5sdp"
+                android:stateListAnimator="@null"
                 android:text="Continue "
+                android:onClick="@{phonecodeviewmodel::continu}"
                 android:textAllCaps="false"
                 android:textColor="@color/white"
                 android:layout_margin="@dimen/_3sdp"
@@ -167,6 +166,16 @@
 
         </androidx.cardview.widget.CardView>
 
-
+        <ProgressBar
+            android:id="@+id/idPBLoading"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:translationZ="@dimen/_3sdp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginBottom="@dimen/_100sdp"
+            android:visibility="gone" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

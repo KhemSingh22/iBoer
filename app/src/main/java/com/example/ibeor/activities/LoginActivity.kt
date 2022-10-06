@@ -5,28 +5,33 @@ import android.os.Bundle
 import android.view.WindowManager
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.NavController
+import androidx.navigation.Navigation
+import androidx.navigation.fragment.NavHostFragment
+import androidx.navigation.ui.NavigationUI
 import com.example.ibeor.R
 import com.example.ibeor.activities.ViewModelFactries.LoginViewmodelFact
 import com.example.ibeor.activities.activities.viewmodels.LoginViewModel
 import com.example.ibeor.databinding.ActivityLoginBinding
 
 class LoginActivity : AppCompatActivity() {
-    lateinit var loginBinding: ActivityLoginBinding
-    lateinit var loginViewModel: LoginViewModel
+
+    private lateinit var navController: NavController
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_login)
 
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN)
         getSupportActionBar()?.hide()
 
-        loginBinding = DataBindingUtil.setContentView(this@LoginActivity,R.layout.activity_login)
-
-        loginBinding.apply {
-            loginViewModel = ViewModelProvider(this@LoginActivity, LoginViewmodelFact(this@LoginActivity)).get(LoginViewModel::class.java)
-            loginBinding.loginviewmodel = loginViewModel
-            loginBinding.lifecycleOwner =this@LoginActivity
-        }
+        navController = Navigation.findNavController(this, R.id.login_nav_host_fragment)
+        NavigationUI.setupActionBarWithNavController(this, navController)
 
     }
+    override fun onSupportNavigateUp(): Boolean {
+        return NavigationUI.navigateUp(navController, null)
+    }
+
 
 }

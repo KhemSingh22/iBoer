@@ -29,7 +29,7 @@
     </fragment>
     <fragment
         android:id="@+id/enterPhoneCodeFragment"
-        android:name="com.example.ibeor.activities.fragments.EnterPhoneCodeFragment"
+        android:name="com.example.ibeor.fragments.EnterPhoneCodeFragment"
         android:label="fragment_enter_phone_code"
         tools:layout="@layout/fragment_enter_phone_code" >
         <action
@@ -47,7 +47,7 @@
     </fragment>
     <fragment
         android:id="@+id/myPhoneNumberFragment"
-        android:name="com.example.ibeor.activities.fragments.MyPhoneNumberFragment"
+        android:name="com.example.ibeor.fragments.MyPhoneNumberFragment"
         android:label="fragment_my_phone_number"
         tools:layout="@layout/fragment_my_phone_number" >
         <action

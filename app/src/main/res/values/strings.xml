@@ -4,7 +4,7 @@
     <string name="sign_in">Sign in</string>
     <string name="sign_in_withemail">Sign in with email</string>
     <string name="trouble_signing_in">Trouble Signing In?</string>
-    <string name="by_tapping_create_account_or_sign_in_you_agree_to_our_terms_learn_how_we_process_your_data_on_our_privacy_or_policy_and_cookies_policy">By tapping create account or Sign in, you agree to our Terms. Learn how we process your data on our Privacy or Policy and Cookies Policy</string>
+    <string name="by_tapping_create_account_or_sign_in_you_agree_to_our_terms_learn_how_we_process_your_data_on_our_privacy_or_policy_and_cookies_policy">By tapping create account or Sign in, you agree to our <u>Terms</u>. Learn how we process your data on our  <u>Privacy Policy</u> and <u>Cookies Policy</u></string>
     <string name="apple">Apple</string>
     <string name="phone_number">Phone Number</string>
     <string name="facebook">Facebook</string>
@@ -38,7 +38,7 @@
     <string name="i_am_a">I am a</string>
     <string name="age_28">Age 28</string>
     <string name="this_can_t_be_changed_later">This can\'t be changed later</string>
-    <string name="dd_mm_yy">DD--MM--YY</string>
+    <string name="dd_mm_yy">DD—MM—YYYY</string>
     <string name="ontinue">Continue</string>
     <string name="please_confirm_your_info">Please Confirm your info</string>
     <string name="confirm">Confirm</string>
@@ -56,4 +56,13 @@
     <string name="be_yourself">Be yourself</string>
     <string name="yaaah_you_made_it">Yaaah you made it</string>
     <string name="start_matching_with_singles_near_you">Start matching with singles near you</string>
+    <string name="_5_miles_away">5 miles away</string>
+    <string name="gabrielle_26">Gabrielle,26</string>
+    <string name="basic_about_me">Basic - About me</string>
+    <string name="sharee_marissa_mendoza_s_profile">Sharee marissa Mendoza\'s Profile</string>
+    <string name="block_marissa">Block Marissa</string>
+    <string name="report_marissa">Report Marissa</string>
+    <string name="title">title</string>
+    <string name="_331_623_8413">331-623-8413</string>
+    <string name="_1">(+1)</string>
 </resources>

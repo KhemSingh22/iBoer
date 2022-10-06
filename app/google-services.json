@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "130146359666",
+    "project_id": "ibeor-96f91",
+    "storage_bucket": "ibeor-96f91.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:130146359666:android:65e49d1d16bc8aa04ca5eb",
+        "android_client_info": {
+          "package_name": "com.example.ibeor"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "130146359666-8r6ris1frse28obcumj7p3im3fo8dt8g.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.ibeor",
+            "certificate_hash": "46bbec611e95cca312d20b88172d693b2a06eb3a"
+          }
+        },
+        {
+          "client_id": "130146359666-sklt17dt7cinp9k08k89dfb0mnbsc1ub.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBxeSXSBzMlGTFN1oM6RnPkUXAPgs6fzp0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "130146359666-sklt17dt7cinp9k08k89dfb0mnbsc1ub.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -10,6 +10,7 @@
             type="com.example.ibeor.dataclasses.Profile" />
     </data>
 
+
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -33,11 +34,36 @@
                 android:scaleType="centerCrop"
                 tools:background="@drawable/imggggg" />
 
+
+            <androidx.viewpager2.widget.ViewPager2
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:orientation="vertical"
+                android:id="@+id/view_pager"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true" />
+
+            <com.google.android.material.tabs.TabLayout
+                android:id="@+id/tab_layout"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                app:tabMode="fixed"
+                app:tabIndicatorHeight="@dimen/_5sdp"
+                android:background="@color/transparent"
+                app:tabGravity="fill"
+                android:rotation="90"
+                android:orientation="vertical"
+                app:tabBackground="@drawable/tab_selector"
+                app:layout_constraintTop_toTopOf="@+id/view_pager"
+                app:layout_constraintBottom_toBottomOf="@+id/view_pager"
+                app:layout_constraintEnd_toEndOf="parent"
+                />
+
             <de.hdodenhof.circleimageview.CircleImageView
                 android:id="@+id/refreshPre_iv"
                 android:layout_width="@dimen/_30sdp"
                 android:layout_height="@dimen/_30sdp"
-                android:layout_marginStart="@dimen/_12sdp"
                 android:layout_marginTop="@dimen/_14sdp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 android:layout_marginBottom="@dimen/_12sdp"
@@ -45,7 +71,7 @@
                 app:layout_constraintEnd_toStartOf="@+id/no_iv"
                 app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintStart_toStartOf="parent"
-                 />
+                />
 
             <ImageView
                 android:id="@+id/no_iv"
@@ -59,7 +85,7 @@
                 app:layout_constraintEnd_toStartOf="@+id/supperLike_iv"
                 app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintStart_toEndOf="@+id/refreshPre_iv"
-                 />
+                />
             <de.hdodenhof.circleimageview.CircleImageView
                 android:id="@+id/supperLike_iv"
                 android:layout_width="@dimen/_40sdp"
@@ -85,8 +111,7 @@
                 android:layout_marginBottom="@dimen/_12sdp"
                 app:layout_constraintEnd_toStartOf="@+id/refreshNext_iv"
                 app:layout_constraintHorizontal_bias="0.5"
-                app:layout_constraintStart_toEndOf="@+id/supperLike_iv"
-                 />
+                app:layout_constraintStart_toEndOf="@+id/supperLike_iv" />
 
             <de.hdodenhof.circleimageview.CircleImageView
                 android:id="@+id/refreshNext_iv"
@@ -101,27 +126,98 @@
                 app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintStart_toEndOf="@+id/yes_Iv"  />
 
-            <androidx.viewpager2.widget.ViewPager2
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                app:layout_constraintTop_toTopOf="parent"
-                android:orientation="vertical"
-                android:id="@+id/view_pager"/>
+            <RelativeLayout
 
-            <com.tbuonomo.viewpagerdotsindicator.SpringDotsIndicator
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:gravity="start"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintBottom_toTopOf="@+id/roots_lay"
+                android:layout_marginBottom="@dimen/_3sdp">
+                <TextView
+                    android:id="@+id/name_tv"
+                    android:layout_width="wrap_content"
+                    android:text="@string/gabrielle_26"
+                    android:layout_marginStart="@dimen/_12sdp"
+                    android:drawablePadding="@dimen/_8sdp"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/_12sdp"
+                    android:textStyle="bold"
+                    android:layout_height="wrap_content"/>
+                <ImageView
+                    android:layout_width="@dimen/_25sdp"
+                    android:layout_marginStart="@dimen/_8sdp"
+                    android:layout_height="@dimen/_25sdp"
+                    android:layout_toEndOf="@+id/name_tv"
+                    android:src="@drawable/ok_icon"
+                    />
+                <ImageView
+                    android:id="@+id/open_info"
+                    android:layout_width="25dp"
+                    android:layout_height="@dimen/_25sdp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginEnd="@dimen/_16sdp"
+                    android:src="@drawable/yes_icon"
+                    />
+
+            </RelativeLayout>
+
+
+            <LinearLayout
+                android:id="@+id/roots_lay"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/dot2"
-                android:layout_marginTop="10dp"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintBottom_toBottomOf="parent"
-                android:layout_marginBottom="@dimen/_56sdp"
-                app:dotsColor="@android:color/holo_orange_light"
-                app:selectedDotColor="@android:color/holo_orange_dark"
-                app:dotsSize="15dp"
-                app:dotsSpacing="5dp"
-                app:stiffness="300"/>
+                android:gravity="center"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintBottom_toTopOf="@+id/aways"
+                android:layout_marginBottom="@dimen/_3sdp"
+                >
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:text="Roots : "
+                    android:layout_marginStart="@dimen/_12sdp"
+                    android:drawablePadding="@dimen/_8sdp"
+                    android:textColor="@color/white"
+                    android:layout_height="wrap_content"/>
+                 <ImageView
+                     android:layout_width="wrap_content"
+                     android:layout_marginStart="@dimen/_8sdp"
+                     android:layout_height="wrap_content"
+                     android:src="@drawable/flag"
+                     />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:text="+"
+                    android:paddingTop="@dimen/_3sdp"
+                    android:layout_marginStart="@dimen/_12sdp"
+                    android:drawablePadding="@dimen/_8sdp"
+                    android:textColor="@color/white"
+                    android:layout_height="wrap_content"/>
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_marginStart="@dimen/_8sdp"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/nigiera"
+                    />
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/aways"
+                android:layout_width="wrap_content"
+                android:text="@string/_5_miles_away"
+                android:drawableLeft="@drawable/loc_icon"
+                android:paddingTop="@dimen/_3sdp"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginStart="@dimen/_12sdp"
+                android:drawablePadding="@dimen/_8sdp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintBottom_toTopOf="@+id/refreshPre_iv"
+                android:layout_marginBottom="@dimen/_12sdp"
+                android:textColor="@color/white"
+                android:layout_height="wrap_content"/>
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.cardview.widget.CardView>

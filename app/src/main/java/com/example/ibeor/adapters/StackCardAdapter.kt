@@ -1,16 +1,24 @@
 package com.example.ibeor.adapters
 
 import android.view.LayoutInflater
+import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.FragmentActivity
+import androidx.navigation.Navigation
 import androidx.recyclerview.widget.RecyclerView
+import androidx.viewpager2.widget.ViewPager2
 import com.example.ibeor.R
 import com.example.ibeor.databinding.StackViewLayoutBinding
 import com.example.ibeor.dataclasses.Profile
 import com.example.ibeor.dataclasses.ViewPagerModel
+import com.google.android.material.tabs.TabLayoutMediator
 
-class StackCardAdapter(var requireActivity: FragmentActivity, var dataList: ArrayList<Profile>) :
+class StackCardAdapter(
+    var requireActivity: FragmentActivity,
+    var dataList: ArrayList<Profile>,
+    var view: View?
+) :
     RecyclerView.Adapter<StackCardAdapter.StackViewHolder>() {
 
 
@@ -22,14 +30,28 @@ class StackCardAdapter(var requireActivity: FragmentActivity, var dataList: Arra
             images.add(ViewPagerModel(R.drawable.imgo))
             images.add(ViewPagerModel(R.drawable.imgt))
             images.add(ViewPagerModel(R.drawable.imgth))
-            images.add(ViewPagerModel(R.drawable.imgf))
-            images.add(ViewPagerModel(R.drawable.imgft))
-            images.add(ViewPagerModel(R.drawable.imgs))
-            images.add(ViewPagerModel(R.drawable.imgsv))
+
 
             val adapter = ViewPagerAdapter(requireActivity, images)
+
             binding.viewPager.adapter = adapter
-//            binding.dot2.setViewPager(binding.viewPager)
+
+            TabLayoutMediator(
+                binding.tabLayout,
+                binding.viewPager,
+                TabLayoutMediator.TabConfigurationStrategy({ tab, position ->
+
+                })
+            ).attach()
+
+            binding.viewPager.registerOnPageChangeCallback(object :
+                ViewPager2.OnPageChangeCallback() {
+
+                override fun onPageSelected(position: Int) {
+                    super.onPageSelected(position)
+
+                }
+            })
 
         }
 
@@ -48,6 +70,9 @@ class StackCardAdapter(var requireActivity: FragmentActivity, var dataList: Arra
 
         holder.binding.imageViewProfilePic.setImageResource(dataList[position].profile_pic)
         holder.setData(requireActivity)
+        holder.binding.openInfo.setOnClickListener {
+              Navigation.findNavController( it as View).navigate(R.id.action_homeScreenFragment_to_openDetailsFragment)
+        }
 
     }
 

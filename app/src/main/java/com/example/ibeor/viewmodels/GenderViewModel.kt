@@ -1,70 +1,47 @@
 package com.example.ibeor.viewmodels
-
-import android.annotation.SuppressLint
 import android.app.Activity
-import android.graphics.Color
+import android.util.Log
 import android.view.View
-import android.widget.TextView
 import androidx.lifecycle.ViewModel
 import androidx.navigation.Navigation
 import com.example.ibeor.R
+import com.example.ibeor.utils.FirebaseUtils
+import com.google.firebase.firestore.SetOptions
 
 class GenderViewModel(var activity: Activity) : ViewModel() {
-    var icon = activity.getDrawable(R.drawable.apple_icon)
-    var check = false
 
-    lateinit var woman: TextView
-    lateinit var man: TextView
 
     fun backprees(view: View) {
         activity.onBackPressed()
 
     }
-
-
-
+    
     fun continu(view: View) {
-        Navigation.findNavController(view).navigate(R.id.action_genderFragment_to_DOBFragment)
+
+//        Navigation.findNavController(view).navigate(R.id.action_genderFragment_to_DOBFragment)
     }
 
-    @SuppressLint("ResourceAsColor")
-    fun woMan(view: View) {
-        woman = TextView(activity)
-        man = TextView(activity)
-        woman = view as TextView
+    fun uploadData(view : View?, meCheck: String?) {
+        val gender = HashMap<String, Any>()
+        gender.put("statusOTP",4)
 
-    /*    if (check.equals(true)) {
-            woman!!.setBackgroundResource(R.drawable.textfield_back)
-            woman!!.setTextColor(Color.BLACK)
-            check = false
-        } else {
-            woman!!.setBackgroundResource(R.drawable.gender_back)
-            woman!!.setTextColor(Color.WHITE)
-            man!!.setBackgroundResource(R.drawable.textfield_back)
-            man!!.setTextColor(Color.BLACK)
-            check = true
+        if (meCheck!!.equals("1")) {
+            gender.put("gender", "Male")
+        } else if (meCheck.equals("2")) {
+            val gender = HashMap<String, Any>()
+            gender.put("gender", "FeMale")
+        }
 
-        }*/
-    }
+        FirebaseUtils().fireStoreDatabase.collection("Users").document(FirebaseUtils().Uid)
+            .set(gender, SetOptions.merge())
+            .addOnSuccessListener {
+                Navigation.findNavController(view!!).navigate(R.id.action_genderFragment2_to_DOBFragment2)
+                Log.e("DDDDDD",it.toString())
+            }
+            .addOnFailureListener {
+                Log.e("DDDDDD","ASASASAsa")
+                Log.e("DDDDDD",it.toString())
 
-    @SuppressLint("ResourceAsColor")
-    fun maN(view: View) {
-        woman = TextView(activity)
-        man = TextView(activity)
-        man = view as TextView
-
-    /*    if (check.equals(true)) {
-            man!!.setBackgroundResource(R.drawable.textfield_back)
-            man!!.setTextColor(Color.BLACK)
-            check = false
-
-        } else {
-            man!!.setBackgroundResource(R.drawable.gender_back)
-            man!!.setTextColor(Color.WHITE)
-            woman!!.setBackgroundResource(R.drawable.textfield_back)
-            woman!!.setTextColor(Color.BLACK)
-            check = true
-
-        }*/
+            }
     }
 }

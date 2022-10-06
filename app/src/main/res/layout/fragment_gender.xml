@@ -79,7 +79,7 @@
 
 
             <androidx.cardview.widget.CardView
-                android:id="@+id/btnSign_in"
+                android:id="@+id/btnConti"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/_26sdp"
@@ -93,13 +93,13 @@
                 app:layout_constraintTop_toBottomOf="@+id/tv_woman">
 
                 <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/btn_continue"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_margin="@dimen/_3sdp"
                     android:background="@drawable/purple_back"
-                    android:onClick="@{genderViewmodel::continu}"
                     android:padding="@dimen/_5sdp"
-                    android:text="Continue "
+                    android:text="@string/ontinue"
                     android:textAllCaps="false"
                     android:textColor="@color/white"
                     android:textSize="@dimen/_16sdp"

@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/login_navigation"
+    app:startDestination="@id/loginFragment">
+
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.example.ibeor.fragments.LoginFragment"
+        android:label="fragment_login"
+        tools:layout="@layout/fragment_login" >
+        <action
+            android:id="@+id/action_loginFragment_to_myPhoneNumberFragment2"
+            app:destination="@id/myPhoneNumberFragment2" />
+        <action
+            android:id="@+id/action_loginFragment_to_accountRecoeryFragment2"
+            app:destination="@id/accountRecoeryFragment2" />
+        <action
+            android:id="@+id/action_loginFragment_to_signInWithFragment"
+            app:destination="@id/signInWithFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/myPhoneNumberFragment2"
+        android:name="com.example.ibeor.fragments.MyPhoneNumberFragment"
+        android:label="MyPhoneNumberFragment" >
+        <action
+            android:id="@+id/action_myPhoneNumberFragment2_to_enterPhoneCodeFragment2"
+            app:destination="@id/enterPhoneCodeFragment2" />
+
+        <!--<argument
+            android:name="phoneno"
+            app:argType="integer" />-->
+    </fragment>
+    <fragment
+        android:id="@+id/accountRecoeryFragment2"
+        android:name="com.example.ibeor.activities.fragments.AccountRecoeryFragment"
+        android:label="AccountRecoeryFragment" />
+    <fragment
+        android:id="@+id/signInWithFragment"
+        android:name="com.example.ibeor.fragments.SignInWithFragment"
+        android:label="SignInWithFragment" >
+        <action
+            android:id="@+id/action_signInWithFragment_to_myPhoneNumberFragment2"
+            app:destination="@id/myPhoneNumberFragment2" />
+    </fragment>
+    <fragment
+        android:id="@+id/enterPhoneCodeFragment2"
+        android:name="com.example.ibeor.fragments.EnterPhoneCodeFragment"
+        android:label="EnterPhoneCodeFragment" >
+ <!--       <argument
+            android:name="phoneno"
+            app:argType="integer" />
+        <argument
+            android:name="phoneCode"
+            app:argType="integer" />-->
+        <action
+            android:id="@+id/action_enterPhoneCodeFragment2_to_yourMailFragment2"
+            app:destination="@id/yourMailFragment2" />
+        <action
+            android:id="@+id/action_enterPhoneCodeFragment2_to_firstNameFragment2"
+            app:destination="@id/firstNameFragment2" />
+        <action
+            android:id="@+id/action_enterPhoneCodeFragment2_to_allowLocationFragment2"
+            app:destination="@id/allowLocationFragment2" />
+        <action
+            android:id="@+id/action_enterPhoneCodeFragment2_to_genderFragment2"
+            app:destination="@id/genderFragment2" />
+        <action
+            android:id="@+id/action_enterPhoneCodeFragment2_to_DOBFragment2"
+            app:destination="@id/DOBFragment2" />
+        <action
+            android:id="@+id/action_enterPhoneCodeFragment2_to_addPhotoFragment2"
+            app:destination="@id/addPhotoFragment2" />
+    </fragment>
+    <fragment
+        android:id="@+id/yourMailFragment2"
+        android:name="com.example.ibeor.activities.fragments.YourMailFragment"
+        android:label="YourMailFragment" >
+        <action
+            android:id="@+id/action_yourMailFragment2_to_firstNameFragment2"
+            app:destination="@id/firstNameFragment2" />
+    </fragment>
+    <fragment
+        android:id="@+id/firstNameFragment2"
+        android:name="com.example.ibeor.activities.fragments.FirstNameFragment"
+        android:label="FirstNameFragment" >
+        <action
+            android:id="@+id/action_firstNameFragment2_to_allowLocationFragment2"
+            app:destination="@id/allowLocationFragment2" />
+    </fragment>
+    <fragment
+        android:id="@+id/allowLocationFragment2"
+        android:name="com.example.ibeor.activities.fragments.AllowLocationFragment"
+        android:label="AllowLocationFragment" />
+    <fragment
+        android:id="@+id/genderFragment2"
+        android:name="com.example.ibeor.fragments.GenderFragment"
+        android:label="GenderFragment" >
+        <action
+            android:id="@+id/action_genderFragment2_to_DOBFragment2"
+            app:destination="@id/DOBFragment2" />
+    </fragment>
+    <fragment
+        android:id="@+id/DOBFragment2"
+        android:name="com.example.ibeor.fragments.DOBFragment"
+        android:label="DOBFragment" >
+        <action
+            android:id="@+id/action_DOBFragment2_to_addPhotoFragment2"
+            app:destination="@id/addPhotoFragment2" />
+        <action
+            android:id="@+id/action_DOBFragment2_to_genderFragment2"
+            app:destination="@id/genderFragment2" />
+    </fragment>
+    <fragment
+        android:id="@+id/addPhotoFragment2"
+        android:name="com.example.ibeor.fragments.AddPhotoFragment"
+        android:label="AddPhotoFragment" />
+</navigation>

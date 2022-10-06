@@ -1,12 +1,11 @@
 package com.example.ibeor.adapters
+
 import android.content.Context
 import android.graphics.Color
 import android.graphics.drawable.ColorDrawable
-import android.opengl.Visibility
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.view.Window
 import android.widget.ImageView
 import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
@@ -17,9 +16,7 @@ import com.example.ibeor.dataclasses.AddPhoto
 import com.google.android.material.bottomsheet.BottomSheetDialog
 
 
-class AddPhotoAdapter(private val photos: ArrayList<AddPhoto>, var context: Context) :
-    RecyclerView.Adapter<AddPhotoAdapter.AddPhotoViewHolder>() {
-
+class AddPhotoAdapter(private val photos: ArrayList<AddPhoto>, var context: Context) : RecyclerView.Adapter<AddPhotoAdapter.AddPhotoViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): AddPhotoViewHolder {
         val layInflater = LayoutInflater.from(parent.context)
@@ -38,7 +35,7 @@ class AddPhotoAdapter(private val photos: ArrayList<AddPhoto>, var context: Cont
     }
 
     private fun bottomPopup() {
-        val bottomSheetDialog = BottomSheetDialog(context ,R.style.NewDialog)
+        val bottomSheetDialog = BottomSheetDialog(context, R.style.NewDialog)
         bottomSheetDialog.setCancelable(true)
         bottomSheetDialog.window!!.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
         bottomSheetDialog.setContentView(R.layout.bottom_sheet_dialog)
@@ -46,7 +43,7 @@ class AddPhotoAdapter(private val photos: ArrayList<AddPhoto>, var context: Cont
         val camera = bottomSheetDialog.findViewById<ImageView>(R.id.iv_camera)
 
         galary!!.setOnClickListener {
-            Toast.makeText(context, "GALARY DONE", Toast.LENGTH_SHORT).show()
+            openCamera()
             bottomSheetDialog.dismiss()
         }
         camera!!.setOnClickListener {
@@ -54,6 +51,10 @@ class AddPhotoAdapter(private val photos: ArrayList<AddPhoto>, var context: Cont
             bottomSheetDialog.dismiss()
         }
         bottomSheetDialog.show()
+    }
+
+    private fun openCamera() {
+
     }
 
     override fun getItemCount(): Int {
@@ -68,7 +69,7 @@ class AddPhotoAdapter(private val photos: ArrayList<AddPhoto>, var context: Cont
                 .with(context)
                 .load(img)
                 .centerCrop()
-                .placeholder(R.drawable.ic_launcher_foreground)
+                .placeholder(R.drawable.add_icons)
                 .into(bindining.itemImage)
             bindining.crossIv.visibility = View.GONE
         }

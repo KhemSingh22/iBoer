@@ -1,5 +1,4 @@
-package com.example.ibeor.activities.fragments
-
+package com.example.ibeor.fragments
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -10,7 +9,6 @@ import com.example.ibeor.R
 import com.example.ibeor.ViewModelFactries.MyPhoneNumberViewModelFact
 import com.example.ibeor.databinding.FragmentMyPhoneNumberBinding
 import com.example.ibeor.viewmodels.MyPhoneNumberViewModel
-
 
 class MyPhoneNumberFragment : Fragment() {
     lateinit var binding: FragmentMyPhoneNumberBinding
@@ -26,7 +24,8 @@ class MyPhoneNumberFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         binding = FragmentMyPhoneNumberBinding.bind(view)
-        binding.apply { viewmomdel = ViewModelProvider(this@MyPhoneNumberFragment, MyPhoneNumberViewModelFact(requireActivity())).get(MyPhoneNumberViewModel::class.java)
+        binding.apply {
+            viewmomdel = ViewModelProvider(this@MyPhoneNumberFragment, MyPhoneNumberViewModelFact(requireActivity())).get(MyPhoneNumberViewModel::class.java)
             binding.myphonenoviewmodel = viewmomdel
             binding.lifecycleOwner = this@MyPhoneNumberFragment
         }
