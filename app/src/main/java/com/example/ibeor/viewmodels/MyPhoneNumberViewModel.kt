@@ -4,17 +4,20 @@ import android.app.Dialog
 import android.graphics.Color
 import android.graphics.drawable.ColorDrawable
 import android.os.Bundle
+import android.telephony.PhoneNumberUtils
 import android.view.View
 import android.view.ViewGroup
+import android.widget.EditText
 import android.widget.Toast
 import androidx.cardview.widget.CardView
 import androidx.fragment.app.FragmentActivity
 import androidx.lifecycle.ViewModel
 import androidx.navigation.Navigation
 import com.example.ibeor.R
+import java.util.*
 
 
-class MyPhoneNumberViewModel(var activity: FragmentActivity) : ViewModel() {
+class MyPhoneNumberViewModel(var activity: FragmentActivity, var phoneNo: EditText) : ViewModel() {
     var phone_Code=""
     var phoneNumber : String ? = null
 //    var phoneNumber =ObservableField("")
@@ -22,13 +25,15 @@ class MyPhoneNumberViewModel(var activity: FragmentActivity) : ViewModel() {
 
     fun backprees(view: View) {
         activity.onBackPressed()
+
     }
 
     fun continu(view: View) {
-        if (phoneNumber.toString().isNullOrEmpty() || phoneNumber.toString().length<10) {
+        PhoneNumberUtils.formatNumber(phoneNumber.toString() , Locale.getDefault().getCountry())
+
+        if (phoneNumber.toString().isEmpty() || phoneNumber.toString().length<10) {
             showpopUp(view)
         } else {
-
                 val bundle = Bundle()
                 bundle.putString("phoneNumber", phoneNumber.toString())
                 Navigation.findNavController(view).navigate(R.id.action_myPhoneNumberFragment2_to_enterPhoneCodeFragment2,bundle)
@@ -37,7 +42,7 @@ class MyPhoneNumberViewModel(var activity: FragmentActivity) : ViewModel() {
     }
 
     fun cancel(view: View) {
-        showpopUp(view)
+    phoneNo.text.clear()
     }
 
     private fun showpopUp(view: View) {

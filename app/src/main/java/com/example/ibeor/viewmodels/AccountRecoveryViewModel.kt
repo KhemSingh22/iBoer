@@ -8,7 +8,7 @@ import com.example.ibeor.R
 
 class AccountRecoveryViewModel(var activity: Activity) : ViewModel() {
     fun signInWithemail(view: View) {
-        Navigation.findNavController(view).navigate(R.id.action_accountRecoeryFragment_to_signinEmailFragment)
+//        Navigation.findNavController(view).navigate(R.id.action_accountRecoeryFragment_to_signinEmailFragment)
     }
 
     fun backprees(view: View) {

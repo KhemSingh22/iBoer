@@ -65,11 +65,11 @@ class GenderFragment : Fragment() {
         }
 
         binding.btnContinue.setOnClickListener {
-           Log.e("SADDDDDD","SDDS")
+           Log.e("SADDDDDD",meCheck.toString())
             if (!(meCheck.equals(""))) {
-                Toast.makeText(requireActivity(), "Please select your gender ", Toast.LENGTH_SHORT).show()
-            } else {
                 viewmodel.uploadData(view,meCheck)
+            } else {
+                Toast.makeText(requireActivity(), "Please select your gender ", Toast.LENGTH_SHORT).show()
             }
         }
 

@@ -29,13 +29,14 @@ class AllowLocationViewModel(private var activity: Activity) : ViewModel() {
 
     fun enableLocation(view: View) {
 
-        Navigation.findNavController(view).navigate(R.id.action_allowLocationFragment_to_genderFragment)
+        Navigation.findNavController(view).navigate(R.id.action_allowLocationFragment2_to_genderFragment2)
     }
 
     fun desableLocation(view: View) {
         Toast.makeText(activity, "Your Location is desable", Toast.LENGTH_SHORT).show()
 
     }
+
 fun getLocation(){
 
 //    fun showEnableLocationSetting() {

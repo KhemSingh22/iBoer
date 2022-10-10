@@ -15,6 +15,6 @@ class AddPhotoViewModel(var activity: Activity):ViewModel() {
     }
 
     fun continu(view: View) {
-    Navigation.findNavController(view).navigate(R.id.action_addPhotoFragment_to_selectCountryFragment)
+//    Navigation.findNavController(view).navigate(R.id.action_addPhotoFragment_to_selectCountryFragment)
     }
 }

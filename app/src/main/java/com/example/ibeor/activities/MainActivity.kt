@@ -17,11 +17,11 @@ class MainActivity : AppCompatActivity() {
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN)
         getSupportActionBar()?.hide()
 
-        navController = Navigation.findNavController(this, R.id.my_Mydetails_nav_host_fragment)
-        NavigationUI.setupActionBarWithNavController(this, navController)
+    /*    navController = Navigation.findNavController(this, R.id.my_Mydetails_nav_host_fragment)
+        NavigationUI.setupActionBarWithNavController(this, navController)*/
     }
 
-    override fun onSupportNavigateUp(): Boolean {
+    /*override fun onSupportNavigateUp(): Boolean {
         return NavigationUI.navigateUp(navController, null)
-    }
+    }*/
 }

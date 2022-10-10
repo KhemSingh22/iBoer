@@ -27,20 +27,20 @@ class GenderViewModel(var activity: Activity) : ViewModel() {
 
         if (meCheck!!.equals("1")) {
             gender.put("gender", "Male")
-        } else if (meCheck.equals("2")) {
-            val gender = HashMap<String, Any>()
+        }
+        else if (meCheck.equals("2")) {
             gender.put("gender", "FeMale")
         }
+        Log.e("DDDDDD",meCheck)
 
         FirebaseUtils().fireStoreDatabase.collection("Users").document(FirebaseUtils().Uid)
             .set(gender, SetOptions.merge())
             .addOnSuccessListener {
                 Navigation.findNavController(view!!).navigate(R.id.action_genderFragment2_to_DOBFragment2)
-                Log.e("DDDDDD",it.toString())
+                Log.e("DDDDDD",it.toString()+"")
             }
             .addOnFailureListener {
-                Log.e("DDDDDD","ASASASAsa")
-                Log.e("DDDDDD",it.toString())
+                Log.e("DDDDDD",it.toString()+"")
 
             }
     }

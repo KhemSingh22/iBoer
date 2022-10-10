@@ -71,7 +71,7 @@ class StackCardAdapter(
         holder.binding.imageViewProfilePic.setImageResource(dataList[position].profile_pic)
         holder.setData(requireActivity)
         holder.binding.openInfo.setOnClickListener {
-              Navigation.findNavController( it as View).navigate(R.id.action_homeScreenFragment_to_openDetailsFragment)
+//              Navigation.findNavController( it as View).navigate(R.id.action_homeScreenFragment_to_openDetailsFragment)
         }
 
     }

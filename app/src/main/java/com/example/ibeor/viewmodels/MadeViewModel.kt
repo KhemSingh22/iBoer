@@ -14,7 +14,7 @@ class MadeViewModel(var activity: Activity) : ViewModel() {
     }
 
     fun continu(view: View) {
-        Navigation.findNavController(view).navigate(R.id.action_madeitFragment_to_mainActivity)
+//        Navigation.findNavController(view).navigate(R.id.action_madeitFragment_to_mainActivity)
         Toast.makeText(activity, "Done", Toast.LENGTH_SHORT).show()
     }
 }

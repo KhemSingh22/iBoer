@@ -1,3 +1,5 @@
 package com.example.ibeor.dataclasses
 
-data class AddPhoto(var img : Int)
+import android.net.Uri
+
+data class AddPhoto(var img : String)

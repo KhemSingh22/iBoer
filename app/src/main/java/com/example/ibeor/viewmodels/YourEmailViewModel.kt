@@ -18,12 +18,10 @@ class YourEmailViewModel(var activity: Activity) : ViewModel() {
     private var uId = FirebaseUtils().Uid
 
     fun continu(view: View) {
-        if (isValidEmail(email_etd.get().toString()) || email_etd.get().isNullOrEmpty()) {
-            Toast.makeText(activity, "Please enter valid Email", Toast.LENGTH_SHORT).show()
-        } else {
-
+        if (isValidEmail(email_etd.get().toString())) {
             uploadEmail(email_etd.get(), view)
-
+        } else {
+            Toast.makeText(activity, "Please enter valid Email", Toast.LENGTH_SHORT).show()
         }
     }
 

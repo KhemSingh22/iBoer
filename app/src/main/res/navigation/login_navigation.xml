@@ -19,6 +19,21 @@
         <action
             android:id="@+id/action_loginFragment_to_signInWithFragment"
             app:destination="@id/signInWithFragment" />
+        <action
+            android:id="@+id/action_loginFragment_to_addPhotoFragment2"
+            app:destination="@id/addPhotoFragment2" />
+        <action
+            android:id="@+id/action_loginFragment_to_yourMailFragment2"
+            app:destination="@id/yourMailFragment2" />
+        <action
+            android:id="@+id/action_loginFragment_to_allowLocationFragment2"
+            app:destination="@id/allowLocationFragment2" />
+        <action
+            android:id="@+id/action_loginFragment_to_genderFragment2"
+            app:destination="@id/genderFragment2" />
+        <action
+            android:id="@+id/action_loginFragment_to_addPhotoFragment22"
+            app:destination="@id/addPhotoFragment2" />
     </fragment>
     <fragment
         android:id="@+id/myPhoneNumberFragment2"
@@ -92,7 +107,11 @@
     <fragment
         android:id="@+id/allowLocationFragment2"
         android:name="com.example.ibeor.activities.fragments.AllowLocationFragment"
-        android:label="AllowLocationFragment" />
+        android:label="AllowLocationFragment" >
+        <action
+            android:id="@+id/action_allowLocationFragment2_to_genderFragment2"
+            app:destination="@id/genderFragment2" />
+    </fragment>
     <fragment
         android:id="@+id/genderFragment2"
         android:name="com.example.ibeor.fragments.GenderFragment"

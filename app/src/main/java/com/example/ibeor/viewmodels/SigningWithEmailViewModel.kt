@@ -32,7 +32,7 @@ class SigningWithEmailViewModel(var activity: Activity) : ViewModel() {
         dialog.setCancelable(false)
 
         dialog.show()
-        Navigation.findNavController(view).navigate(R.id.action_signinEmailFragment_to_myPhoneNumberFragment)
+//        Navigation.findNavController(view).navigate(R.id.action_signinEmailFragment_to_myPhoneNumberFragment)
         dialog.dismiss()
 
     }

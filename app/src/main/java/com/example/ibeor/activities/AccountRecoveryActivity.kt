@@ -9,7 +9,6 @@ import androidx.navigation.ui.NavigationUI
 import com.example.ibeor.R
 
 class AccountRecoveryActivity : AppCompatActivity() {
-    private lateinit var navController: NavController
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -18,12 +17,6 @@ class AccountRecoveryActivity : AppCompatActivity() {
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN)
         getSupportActionBar()?.hide()
 
-        navController = Navigation.findNavController(this, R.id.my_nav_host_fragment)
-        NavigationUI.setupActionBarWithNavController(this, navController)
-
-    }
-    override fun onSupportNavigateUp(): Boolean {
-        return NavigationUI.navigateUp(navController, null)
     }
 
 }

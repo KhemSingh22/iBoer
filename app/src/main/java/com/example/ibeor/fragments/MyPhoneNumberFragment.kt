@@ -25,7 +25,7 @@ class MyPhoneNumberFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         binding = FragmentMyPhoneNumberBinding.bind(view)
         binding.apply {
-            viewmomdel = ViewModelProvider(this@MyPhoneNumberFragment, MyPhoneNumberViewModelFact(requireActivity())).get(MyPhoneNumberViewModel::class.java)
+            viewmomdel = ViewModelProvider(this@MyPhoneNumberFragment, MyPhoneNumberViewModelFact(requireActivity(),binding.phoneNo)).get(MyPhoneNumberViewModel::class.java)
             binding.myphonenoviewmodel = viewmomdel
             binding.lifecycleOwner = this@MyPhoneNumberFragment
         }
