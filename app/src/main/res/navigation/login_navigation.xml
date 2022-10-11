@@ -34,6 +34,18 @@
         <action
             android:id="@+id/action_loginFragment_to_addPhotoFragment22"
             app:destination="@id/addPhotoFragment2" />
+        <action
+            android:id="@+id/action_loginFragment_to_selectCountryFragment"
+            app:destination="@id/selectCountryFragment" />
+        <action
+            android:id="@+id/action_loginFragment_to_welComeFragment"
+            app:destination="@id/welComeFragment" />
+        <action
+            android:id="@+id/action_loginFragment_to_madeitFragment"
+            app:destination="@id/madeitFragment" />
+        <action
+            android:id="@+id/action_loginFragment_to_homeScreenFragment"
+            app:destination="@id/homeScreenFragment" />
     </fragment>
     <fragment
         android:id="@+id/myPhoneNumberFragment2"
@@ -87,6 +99,12 @@
         <action
             android:id="@+id/action_enterPhoneCodeFragment2_to_addPhotoFragment2"
             app:destination="@id/addPhotoFragment2" />
+        <action
+            android:id="@+id/action_enterPhoneCodeFragment2_to_selectCountryFragment"
+            app:destination="@id/selectCountryFragment" />
+        <action
+            android:id="@+id/action_enterPhoneCodeFragment2_to_welComeFragment2"
+            app:destination="@id/welComeFragment" />
     </fragment>
     <fragment
         android:id="@+id/yourMailFragment2"
@@ -134,5 +152,37 @@
     <fragment
         android:id="@+id/addPhotoFragment2"
         android:name="com.example.ibeor.fragments.AddPhotoFragment"
-        android:label="AddPhotoFragment" />
+        android:label="AddPhotoFragment" >
+        <action
+            android:id="@+id/action_addPhotoFragment2_to_selectCountryFragment"
+            app:destination="@id/selectCountryFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/selectCountryFragment"
+        android:name="com.example.ibeor.fragments.SelectCountryFragment"
+        android:label="SelectCountryFragment" >
+        <action
+            android:id="@+id/action_selectCountryFragment_to_welComeFragment"
+            app:destination="@id/welComeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/welComeFragment"
+        android:name="com.example.ibeor.fragments.WelComeFragment"
+        android:label="WelComeFragment" >
+        <action
+            android:id="@+id/action_welComeFragment_to_madeitFragment"
+            app:destination="@id/madeitFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/madeitFragment"
+        android:name="com.example.ibeor.fragments.MadeitFragment"
+        android:label="MadeitFragment" >
+        <action
+            android:id="@+id/action_madeitFragment_to_homeScreenFragment"
+            app:destination="@id/homeScreenFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/homeScreenFragment"
+        android:name="com.example.ibeor.fragments.HomeScreenFragment"
+        android:label="HomeScreenFragment" />
 </navigation>

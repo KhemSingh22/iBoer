@@ -12,7 +12,7 @@ class WelComeViewModel(var activity: Activity) : ViewModel() {
     }
 
     fun Continu(view: View) {
-//    Navigation.findNavController(view).navigate(R.id.action_welComeFragment_to_madeitFragment)
+    Navigation.findNavController(view).navigate(R.id.action_welComeFragment_to_madeitFragment)
     }
 
 }

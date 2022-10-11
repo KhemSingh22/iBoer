@@ -199,8 +199,8 @@ class PhoneCodeViewModel(
                     4 -> Navigation.findNavController(vi!!).navigate(R.id.action_enterPhoneCodeFragment2_to_genderFragment2)
                     5 -> Navigation.findNavController(vi!!).navigate(R.id.action_enterPhoneCodeFragment2_to_addPhotoFragment2)
 //                    5 -> Navigation.findNavController(vi!!).navigate(R.id.action_enterPhoneCodeFragment2_to_DOBFragment2)
-                    6 -> Navigation.findNavController(vi!!).navigate(R.id.action_enterPhoneCodeFragment2_to_addPhotoFragment2)
-                    7  -> Navigation.findNavController(vi!!).navigate(R.id.action_enterPhoneCodeFragment2_to_addPhotoFragment2)
+                    6 -> Navigation.findNavController(vi!!).navigate(R.id.action_enterPhoneCodeFragment2_to_selectCountryFragment)
+                    7  -> Navigation.findNavController(vi!!).navigate(R.id.action_enterPhoneCodeFragment2_to_welComeFragment2)
                     8  -> Navigation.findNavController(vi!!).navigate(R.id.action_enterPhoneCodeFragment2_to_addPhotoFragment2)
                 }
 

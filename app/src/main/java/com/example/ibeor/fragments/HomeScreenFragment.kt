@@ -11,6 +11,8 @@ import android.view.ViewGroup
 import android.view.ViewTreeObserver
 import android.view.animation.AccelerateInterpolator
 import android.view.animation.LinearInterpolator
+import android.widget.ProgressBar
+import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.DefaultItemAnimator
@@ -33,10 +35,7 @@ class HomeScreenFragment : Fragment(), CardStackListener {
     lateinit var adapter : StackCardAdapter
     private lateinit var layoutManager: CardStackLayoutManager
 
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
+    override fun onCreateView( inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         // Inflate the layout for this fragment
 
         binding = FragmentHomeScreenBinding.bind(
@@ -45,13 +44,11 @@ class HomeScreenFragment : Fragment(), CardStackListener {
 
         dataList = ArrayList()
 
-        viewmodel = ViewModelProvider(
-            this@HomeScreenFragment,
-            HomeScreenViewModelFact(requireActivity())
-        ).get(HomeScreenViewModel::class.java)
+        viewmodel = ViewModelProvider(this@HomeScreenFragment, HomeScreenViewModelFact(requireActivity())).get(HomeScreenViewModel::class.java)
         binding.homeVM = viewmodel
         binding.lifecycleOwner = this@HomeScreenFragment
 
+        viewmodel.readData()
         SetProgress()
         SetStackView()
         getScreenWidth()
@@ -60,11 +57,11 @@ class HomeScreenFragment : Fragment(), CardStackListener {
         return binding.root
     }
 
+
+
     private fun setlautoutHight(cardHight: Int) {
 
         val params: ViewGroup.LayoutParams = binding.stackView.layoutParams
-// Changes the height and width to the specified *pixels*
-// Changes the height and width to the specified *pixels*
         params.height = cardHight
         binding.stackView.layoutParams = params
     }

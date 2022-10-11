@@ -59,6 +59,50 @@
             app:layout_constraintTop_toBottomOf="@+id/demo_tv"
             android:layout_height="wrap_content"/>
 
+        <com.hbb20.CountryCodePicker
+            android:id="@+id/ccp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:ccpDialog_keyboardAutoPopup="false"
+            app:ccp_defaultNameCode="IN"
+            android:layout_marginTop="@dimen/_16sdp"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginStart="@dimen/_16sdp"
+            android:gravity="start"
+            app:ccp_showFullName="true"
+            app:ccp_textGravity="LEFT"
+            app:ccp_showPhoneCode="false"
+            android:padding="@dimen/_8sdp"
+            android:layout_marginEnd="@dimen/_16sdp"
+            android:background="@drawable/textfield_back"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/roots_tv"
+            tools:ignore="MissingConstraints" />
+
+
+
+        <com.hbb20.CountryCodePicker
+            android:id="@+id/ccp1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:ccpDialog_keyboardAutoPopup="false"
+            app:ccp_defaultNameCode="IN"
+            android:gravity="start"
+            app:ccp_showFullName="true"
+            app:ccp_textGravity="LEFT"
+            app:ccp_showPhoneCode="false"
+            android:padding="@dimen/_8sdp"
+            android:layout_marginTop="@dimen/_16sdp"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginStart="@dimen/_16sdp"
+            android:layout_marginEnd="@dimen/_16sdp"
+            android:visibility="gone"
+            android:background="@drawable/textfield_back"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/ccp"
+            tools:ignore="MissingConstraints" />
+
+
         <LinearLayout
             android:id="@+id/ln_layout"
             android:layout_width="match_parent"
@@ -66,6 +110,7 @@
             app:layout_constraintStart_toStartOf="parent"
             android:layout_marginStart="@dimen/_16sdp"
             android:layout_marginEnd="@dimen/_16sdp"
+            android:visibility="gone"
             android:background="@drawable/textfield_back"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/roots_tv"
@@ -86,7 +131,6 @@
     android:layout_gravity="center"
     android:layout_height="wrap_content"/>
         </LinearLayout>
-
         <LinearLayout
             android:id="@+id/lt_layout"
             android:layout_width="match_parent"
@@ -128,14 +172,13 @@
             app:cardElevation="@dimen/_10sdp"
             android:shadowColor="@color/light_black"
             app:cardCornerRadius="@dimen/_23sdp"
-            app:layout_constraintTop_toBottomOf="@+id/lt_layout"
+            app:layout_constraintTop_toBottomOf="@+id/ccp1"
             android:layout_height="wrap_content">
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/btn_continu"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@drawable/purple_back"
-                android:onClick="@{countryViewModel::continu}"
                 android:padding="@dimen/_5sdp"
                 android:text="@string/ontinue"
                 android:textAllCaps="false"
@@ -146,5 +189,18 @@
 
         </androidx.cardview.widget.CardView>
 
+
+        <ProgressBar
+            android:id="@+id/country_progress"
+            android:layout_width="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:backgroundTint="@color/red"
+            android:visibility="gone"
+            app:layout_constraintTop_toTopOf="parent"
+            android:indeterminateTint="@color/pink"
+
+            app:layout_constraintBottom_toBottomOf="@+id/card_view"
+            android:layout_height="wrap_content"/>
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

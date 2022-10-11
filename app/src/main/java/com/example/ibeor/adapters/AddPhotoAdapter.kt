@@ -8,17 +8,21 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
+import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.ibeor.R
 import com.example.ibeor.databinding.AddphotoLayoutBinding
 import com.example.ibeor.dataclasses.AddPhoto
 import com.example.ibeor.listner.Listners
+import com.example.ibeor.utils.FirebaseUtils
 import com.google.android.material.bottomsheet.BottomSheetDialog
+import com.google.firebase.firestore.SetOptions
+import java.util.*
 
 
 class AddPhotoAdapter(
-    private var photos: ArrayList<AddPhoto>,
+     var photos: ArrayList<AddPhoto>,
     var context: Context,
     var listners: Listners
 ) : RecyclerView.Adapter<AddPhotoAdapter.AddPhotoViewHolder>() {
@@ -26,7 +30,6 @@ class AddPhotoAdapter(
     fun updateList(picturesList: ArrayList<AddPhoto>) {
         photos = picturesList
     }
-
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): AddPhotoViewHolder {
         val layInflater = LayoutInflater.from(parent.context)
         var viewHolder: RecyclerView.ViewHolder? = null
@@ -42,7 +45,6 @@ class AddPhotoAdapter(
         holder.bindining.itemImage.setOnClickListener {
             bottomPopup(position, holder.bindining.crossIv)
         }
-
     }
 
     fun bottomPopup(position: Int, crossIv: ImageView) {

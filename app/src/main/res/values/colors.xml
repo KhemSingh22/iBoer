@@ -14,5 +14,6 @@
     <color name="white">#FFFFFFFF</color>
     <color name="light_white">#90FFFFFF</color>
     <color name="red">#D34F4F</color>
+    <color name="pink">#BB0CC7</color>
     <color name="green">#09EA12</color>
 </resources>

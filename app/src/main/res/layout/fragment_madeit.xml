@@ -86,7 +86,6 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="@dimen/_3sdp"
                 android:background="@drawable/purple_back"
-                android:onClick="@{madeVM::continu}"
                 android:padding="@dimen/_5sdp"
                 android:text="Continue "
                 android:textAllCaps="false"
@@ -94,6 +93,18 @@
                 android:textSize="@dimen/_16sdp" />
 
         </androidx.cardview.widget.CardView>
+
+        <ProgressBar
+            android:id="@+id/made_progress"
+            android:layout_width="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:backgroundTint="@color/red"
+            android:visibility="gone"
+            app:layout_constraintTop_toTopOf="parent"
+            android:indeterminateTint="@color/pink"
+            app:layout_constraintBottom_toBottomOf="@+id/btn_cont"
+            android:layout_height="wrap_content"/>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

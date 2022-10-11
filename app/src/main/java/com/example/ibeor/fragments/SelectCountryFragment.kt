@@ -4,22 +4,18 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.AdapterView
-import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import com.example.ibeor.R
 import com.example.ibeor.ViewModelFactries.CountryViewModelFact
-import com.example.ibeor.adapters.CountryListAdapter
 import com.example.ibeor.databinding.FragmentSelectCountryBinding
 import com.example.ibeor.dataclasses.CountryList
 import com.example.ibeor.viewmodels.CountryViewModel
 
 
-class SelectCountryFragment : Fragment(), AdapterView.OnItemSelectedListener {
+class SelectCountryFragment : Fragment() {
     lateinit var binding: FragmentSelectCountryBinding
-
-    //    lateinit var viewmodel  :CountryViewModel
+    lateinit var viewmodel  :CountryViewModel
     lateinit var countryData: ArrayList<CountryList>
 
     override fun onCreateView(
@@ -33,21 +29,27 @@ class SelectCountryFragment : Fragment(), AdapterView.OnItemSelectedListener {
                 false
             )
         )
-        binding.countryViewModel = ViewModelProvider(
-            this@SelectCountryFragment,
-            CountryViewModelFact(requireActivity())
-        ).get(CountryViewModel::class.java)
+        viewmodel = ViewModelProvider(this@SelectCountryFragment, CountryViewModelFact(requireActivity())).get(CountryViewModel::class.java)
+
         binding.lifecycleOwner = this@SelectCountryFragment
         countryData = ArrayList()
-        setSpinner()
+
         binding.back.setOnClickListener {
             countryData.clear()
             requireActivity().onBackPressed()
         }
+
+        viewmodel.setCodePicker(binding.ccp,binding.cardView,binding.ccp1)
+        viewmodel.setCodePicker1(binding.ccp1)
+
+        binding.btnContinu.setOnClickListener {
+            viewmodel.uploadCountry(view!!,binding.countryProgress)
+        }
         return binding.root
     }
 
-    private fun setSpinner() {
+
+  /*  private fun setSpinner() {
 
         binding.spinnerAlgorithm.setOnItemSelectedListener(this)
         binding.selectCountrySpin.setOnItemSelectedListener(this)
@@ -64,18 +66,8 @@ class SelectCountryFragment : Fragment(), AdapterView.OnItemSelectedListener {
         binding.selectCountrySpin.setAdapter(countryadapter)
 
     }
+*/
 
-    override fun onItemSelected(p0: AdapterView<*>?, p1: View?, p2: Int, p3: Long) {
-        if (p2 >= 1) {
-            Toast.makeText(requireActivity(), "Working", Toast.LENGTH_SHORT).show()
-            binding.ltLayout.visibility = View.VISIBLE
-            binding.cardView.visibility = View.VISIBLE
-        }
 
-    }
-
-    override fun onNothingSelected(p0: AdapterView<*>?) {
-
-    }
 
 }

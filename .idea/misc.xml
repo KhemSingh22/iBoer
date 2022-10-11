@@ -39,7 +39,10 @@
         <entry key="..\:/ibeor/code/app/src/main/res/layout/addphoto_layout.xml" value="0.12894736842105264" />
         <entry key="..\:/ibeor/code/app/src/main/res/layout/bottom_sheet_dialog.xml" value="0.1675213675213675" />
         <entry key="..\:/ibeor/code/app/src/main/res/layout/confirm_info.xml" value="0.33" />
+        <entry key="..\:/ibeor/code/app/src/main/res/layout/country_list_layout.xml" value="0.1675213675213675" />
+        <entry key="..\:/ibeor/code/app/src/main/res/layout/file_pathes.xml" value="0.1675213675213675" />
         <entry key="..\:/ibeor/code/app/src/main/res/layout/fragment_account_recoery.xml" value="0.1361111111111111" />
+        <entry key="..\:/ibeor/code/app/src/main/res/layout/fragment_add_photo.xml" value="0.1675213675213675" />
         <entry key="..\:/ibeor/code/app/src/main/res/layout/fragment_allow_location.xml" value="0.12894736842105264" />
         <entry key="..\:/ibeor/code/app/src/main/res/layout/fragment_d_o_b.xml" value="0.335042735042735" />
         <entry key="..\:/ibeor/code/app/src/main/res/layout/fragment_enter_phone_code.xml" value="0.18" />
@@ -52,6 +55,7 @@
         <entry key="..\:/ibeor/code/app/src/main/res/layout/fragment_my_details.xml" value="0.1267361111111111" />
         <entry key="..\:/ibeor/code/app/src/main/res/layout/fragment_my_phone_number.xml" value="0.25" />
         <entry key="..\:/ibeor/code/app/src/main/res/layout/fragment_open_details.xml" value="0.25" />
+        <entry key="..\:/ibeor/code/app/src/main/res/layout/fragment_select_country.xml" value="0.2" />
         <entry key="..\:/ibeor/code/app/src/main/res/layout/fragment_sign_in_with.xml" value="0.2" />
         <entry key="..\:/ibeor/code/app/src/main/res/layout/fragment_signin_email.xml" value="0.1675213675213675" />
         <entry key="..\:/ibeor/code/app/src/main/res/layout/fragment_your_mail.xml" value="0.33" />
@@ -61,6 +65,7 @@
         <entry key="..\:/ibeor/code/app/src/main/res/layout/stack_view_layout.xml" value="0.2" />
         <entry key="..\:/ibeor/code/app/src/main/res/layout/view_pager_item.xml" value="0.12894736842105264" />
         <entry key="..\:/ibeor/code/app/src/main/res/layout/welcome_items.xml" value="0.153125" />
+        <entry key="..\:/ibeor/code/app/src/main/res/xml/file_provider_paths.xml" value="0.1675213675213675" />
       </map>
     </option>
   </component>

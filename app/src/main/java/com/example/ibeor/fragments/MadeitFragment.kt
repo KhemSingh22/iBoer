@@ -30,12 +30,13 @@ class MadeitFragment : Fragment() {
 
         bindin.apply {
 
-            vm = ViewModelProvider(this@MadeitFragment, MadeViewModelFact(requireActivity())).get(
-                MadeViewModel::class.java
-
-            )
+            vm = ViewModelProvider(this@MadeitFragment, MadeViewModelFact(requireActivity())).get(MadeViewModel::class.java)
             bindin.madeVM = vm
             bindin.lifecycleOwner = requireActivity()
+
+            bindin.btnConti.setOnClickListener {
+                vm.nextScreen(view,bindin.madeProgress)
+            }
         }
         return bindin.root
     }
