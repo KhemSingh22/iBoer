@@ -8,7 +8,6 @@ import android.view.ViewGroup
 import androidx.lifecycle.ViewModelProvider
 import com.example.ibeor.R
 import com.example.ibeor.ViewModelFactries.YourEmailViewModelFact
-import com.example.ibeor.databinding.FragmentEnterPhoneCodeBinding
 import com.example.ibeor.databinding.FragmentYourMailBinding
 import com.example.ibeor.viewmodels.YourEmailViewModel
 

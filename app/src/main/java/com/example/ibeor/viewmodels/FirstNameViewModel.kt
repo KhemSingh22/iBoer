@@ -7,6 +7,7 @@ import androidx.databinding.ObservableField
 import androidx.lifecycle.ViewModel
 import androidx.navigation.Navigation
 import com.example.ibeor.R
+import com.example.ibeor.manager.SessionManager
 import com.example.ibeor.utils.FirebaseUtils
 import com.google.firebase.firestore.SetOptions
 
@@ -26,7 +27,7 @@ class FirstNameViewModel(var activity: Activity) : ViewModel() {
     }
 
     private fun upLoadData(FirstName : String?, view: View) {
-
+       var status = 3
         var firstname = HashMap<String,Any>()
         firstname.put("firstName",FirstName.toString())
         firstname.put("statusOTP",3)
@@ -37,6 +38,8 @@ class FirstNameViewModel(var activity: Activity) : ViewModel() {
             .addOnSuccessListener {
                 Toast.makeText(activity,"Name Upload Success",Toast.LENGTH_SHORT).show()
                 Navigation.findNavController(view).navigate(R.id.action_firstNameFragment2_to_allowLocationFragment2)
+                val sessionManager = SessionManager(activity)
+                sessionManager.saVeStatus(status.toString())
             }
             .addOnFailureListener {
                 Toast.makeText(activity,"Name Upload Fail",Toast.LENGTH_SHORT).show()

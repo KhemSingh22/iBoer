@@ -9,6 +9,7 @@ import android.graphics.Bitmap
 import android.graphics.PorterDuff
 import android.net.Uri
 import android.os.Bundle
+import android.os.Environment
 import android.provider.MediaStore
 import android.util.Log
 import android.view.LayoutInflater
@@ -17,10 +18,12 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.ProgressBar
 import android.widget.Toast
+import androidx.core.content.FileProvider
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.Navigation
 import androidx.recyclerview.widget.GridLayoutManager
+import com.example.ibeor.BuildConfig
 import com.example.ibeor.R
 import com.example.ibeor.ViewModelFactries.AddPhotoViewModelFact
 import com.example.ibeor.adapters.AddPhotoAdapter
@@ -37,6 +40,8 @@ import com.google.firebase.storage.FirebaseStorage
 import com.google.firebase.storage.StorageReference
 import com.google.firebase.storage.UploadTask
 import java.io.File
+import java.io.IOException
+import java.text.SimpleDateFormat
 import java.util.*
 
 
@@ -127,12 +132,12 @@ class AddPhotoFragment : Fragment(), Listners {
     override fun openCamera(camImagview: ImageView?, position1: Int, crossIv: ImageView) {
         pos = position1
         crossImg = crossIv
-
-        val cameraIntent = Intent(MediaStore.ACTION_IMAGE_CAPTURE)
+        openCameraIntent()
+ /*       val cameraIntent = Intent(MediaStore.ACTION_IMAGE_CAPTURE)
 //        photoFile = getPhotoFileUri(photoFileName)
 //        val fileProvider = FileProvider.getUriForFile(requireActivity(), "com.codepath.fileprovider", photoFile!!)
 //        cameraIntent.putExtra(MediaStore.EXTRA_OUTPUT, fileProvider)
-        startActivityForResult(cameraIntent, REQUEST_CODE)
+        startActivityForResult(cameraIntent, REQUEST_CODE)*/
 
 
 /*
@@ -184,7 +189,24 @@ class AddPhotoFragment : Fragment(), Listners {
             rvadapter.updateList(photoList)
             rvadapter.notifyDataSetChanged()
 
-        }
+        }else
+            if (requestCode == REQUEST_CAPTURE_IMAGE &&
+                resultCode == Activity.RESULT_OK
+            ) {
+                /*   if (data != null && data.extras != null) {
+                       val imageBitmap = data.extras!!["data"] as Bitmap?
+                       ivPhoto!!.setImageBitmap(imageBitmap)
+                   }*/
+                if(photoFile!=null)
+                {
+                //    Glide.with(this).load(photoFile).into(ivPhoto!!)
+                    var photoFileData=Uri.fromFile(photoFile) as Uri
+                    photoList.removeAt(pos!!)
+                    photoList.add(pos!!, AddPhoto(photoFileData.toString()))
+                    rvadapter.updateList(photoList)
+                    rvadapter.notifyDataSetChanged()
+                }
+            }
 
     }
 
@@ -216,13 +238,13 @@ class AddPhotoFragment : Fragment(), Listners {
         ref.putFile(Uri.parse(img[count].img))
             .addOnSuccessListener(OnSuccessListener<UploadTask.TaskSnapshot> { taskSnapshot ->
                 taskSnapshot.storage.downloadUrl.addOnSuccessListener {
-
+                    val status =6
                     val imageUrl=HashMap<String,Any>()
                     imageUrl.put("userImage_$count",it.toString())
-                    imageUrl.put("statusOTP",6)
+                    imageUrl.put("statusOTP",status)
 
                     FirebaseUtils().fireStoreDatabase.collection("Users").document(FirebaseUtils().Uid)
-                        .set(imageUrl, SetOptions.merge())
+                        .set(imageUrl , SetOptions.merge())
                         .addOnSuccessListener {
                             if(count==img.size-1)
                             {
@@ -230,7 +252,7 @@ class AddPhotoFragment : Fragment(), Listners {
                                 Toast.makeText(requireActivity(), "Image Uploaded", Toast.LENGTH_SHORT).show()
                                 Navigation.findNavController(view!!).navigate(R.id.action_addPhotoFragment2_to_selectCountryFragment)
                                 val sessionManager =SessionManager(requireActivity())
-                                val status =6
+
                                 sessionManager.saVeStatus(status.toString())
                             }else {
                                 count = count + 1
@@ -263,4 +285,48 @@ class AddPhotoFragment : Fragment(), Listners {
             })
 
     }
+
+
+    var imagePath: String? = null
+    @Throws(IOException::class)
+    private fun createImageFile(): File? {
+        val timeStamp: String = SimpleDateFormat("yyyyMMdd_HHmmss",
+            Locale.getDefault()).format(Date())
+        val imageFileName = "IMG_" + timeStamp + "_"
+        val storageDir: File? = requireActivity().getExternalFilesDir(Environment.DIRECTORY_PICTURES)
+        val image: File = File.createTempFile(
+            imageFileName,
+            ".jpg",
+            storageDir
+        )
+        imagePath = image.getAbsolutePath()
+        return image
+    }
+
+    private val REQUEST_CAPTURE_IMAGE = 3100
+   // var photoFile: File? = null
+    private fun openCameraIntent() {
+        val pictureIntent = Intent(
+            MediaStore.ACTION_IMAGE_CAPTURE)
+        if (pictureIntent.resolveActivity(requireActivity().packageManager) != null) {
+            //Create a file to store the image
+
+            try {
+                photoFile = createImageFile()
+            } catch (ex: IOException) {
+            }
+            if (photoFile != null) {
+                /* val photoURI: Uri =
+                     FileProvider.getUriForFile(this, "com.inshorts.myapplication.android.provider", photoFile)*/
+                val photoURI: Uri =   FileProvider.getUriForFile(Objects.requireNonNull(requireActivity()),
+                    BuildConfig.APPLICATION_ID + ".fileprovider", photoFile!!);
+                pictureIntent.putExtra(MediaStore.EXTRA_OUTPUT,
+                    photoURI)
+                startActivityForResult(pictureIntent,
+                    REQUEST_CAPTURE_IMAGE)
+            }
+        }
+    }
+
+
 }

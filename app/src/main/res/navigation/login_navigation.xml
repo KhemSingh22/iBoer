@@ -105,6 +105,12 @@
         <action
             android:id="@+id/action_enterPhoneCodeFragment2_to_welComeFragment2"
             app:destination="@id/welComeFragment" />
+        <action
+            android:id="@+id/action_enterPhoneCodeFragment2_to_madeitFragment"
+            app:destination="@id/madeitFragment" />
+        <action
+            android:id="@+id/action_enterPhoneCodeFragment2_to_homeScreenFragment"
+            app:destination="@id/homeScreenFragment" />
     </fragment>
     <fragment
         android:id="@+id/yourMailFragment2"
@@ -184,5 +190,20 @@
     <fragment
         android:id="@+id/homeScreenFragment"
         android:name="com.example.ibeor.fragments.HomeScreenFragment"
-        android:label="HomeScreenFragment" />
+        android:label="HomeScreenFragment" >
+        <action
+            android:id="@+id/action_homeScreenFragment_to_openDetailsFragment"
+            app:destination="@id/openDetailsFragment" />
+        <action
+            android:id="@+id/action_homeScreenFragment_to_editProfileFragment"
+            app:destination="@id/editProfileFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/openDetailsFragment"
+        android:name="com.example.ibeor.fragments.OpenDetailsFragment"
+        android:label="OpenDetailsFragment" />
+    <fragment
+        android:id="@+id/editProfileFragment"
+        android:name="com.example.ibeor.fragments.EditProfileFragment"
+        android:label="EditProfileFragment" />
 </navigation>

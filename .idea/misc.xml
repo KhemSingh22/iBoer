@@ -24,12 +24,18 @@
         <entry key="..\:/Users/QA-1(Android)/Desktop/iBeor/app/src/main/res/layout/fragment_signin_email.xml" value="0.22" />
         <entry key="..\:/Users/QA-1(Android)/Desktop/iBeor/app/src/main/res/layout/fragment_your_mail.xml" value="0.18408203125" />
         <entry key="..\:/Users/QA-1(Android)/Desktop/iBeor/app/src/main/res/layout/invalid_no_layout.xml" value="0.20416666666666666" />
+        <entry key="..\:/ibeor/code/app/src/main/res/drawable/chip_back.xml" value="0.125" />
         <entry key="..\:/ibeor/code/app/src/main/res/drawable/circular_progress_bar.xml" value="0.1395" />
         <entry key="..\:/ibeor/code/app/src/main/res/drawable/circular_shape.xml" value="0.1395" />
         <entry key="..\:/ibeor/code/app/src/main/res/drawable/default_dot.xml" value="0.33" />
         <entry key="..\:/ibeor/code/app/src/main/res/drawable/dialog_bg.xml" value="0.1395" />
+        <entry key="..\:/ibeor/code/app/src/main/res/drawable/dislike_back.xml" value="0.125" />
+        <entry key="..\:/ibeor/code/app/src/main/res/drawable/like_back.xml" value="0.125" />
         <entry key="..\:/ibeor/code/app/src/main/res/drawable/selected_dot.xml" value="0.1" />
+        <entry key="..\:/ibeor/code/app/src/main/res/drawable/spinner_back.xml" value="0.177" />
         <entry key="..\:/ibeor/code/app/src/main/res/drawable/tab_selector.xml" value="0.1" />
+        <entry key="..\:/ibeor/code/app/src/main/res/drawable/textfield_back.xml" value="0.177" />
+        <entry key="..\:/ibeor/code/app/src/main/res/drawable/yello_back.xml" value="0.125" />
         <entry key="..\:/ibeor/code/app/src/main/res/layout/activity_account_recovery.xml" value="0.1361111111111111" />
         <entry key="..\:/ibeor/code/app/src/main/res/layout/activity_login.xml" value="0.1163895486935867" />
         <entry key="..\:/ibeor/code/app/src/main/res/layout/activity_main.xml" value="0.13" />
@@ -45,19 +51,24 @@
         <entry key="..\:/ibeor/code/app/src/main/res/layout/fragment_add_photo.xml" value="0.1675213675213675" />
         <entry key="..\:/ibeor/code/app/src/main/res/layout/fragment_allow_location.xml" value="0.12894736842105264" />
         <entry key="..\:/ibeor/code/app/src/main/res/layout/fragment_d_o_b.xml" value="0.335042735042735" />
+        <entry key="..\:/ibeor/code/app/src/main/res/layout/fragment_edit_profile.xml" value="0.1675213675213675" />
+        <entry key="..\:/ibeor/code/app/src/main/res/layout/fragment_edit_user.xml" value="0.15598290598290598" />
         <entry key="..\:/ibeor/code/app/src/main/res/layout/fragment_enter_phone_code.xml" value="0.18" />
         <entry key="..\:/ibeor/code/app/src/main/res/layout/fragment_first_name.xml" value="0.33" />
         <entry key="..\:/ibeor/code/app/src/main/res/layout/fragment_gender.xml" value="0.1675213675213675" />
-        <entry key="..\:/ibeor/code/app/src/main/res/layout/fragment_home_screen.xml" value="0.13178733031674209" />
+        <entry key="..\:/ibeor/code/app/src/main/res/layout/fragment_home_screen.xml" value="0.33" />
         <entry key="..\:/ibeor/code/app/src/main/res/layout/fragment_login.xml" value="0.1675213675213675" />
         <entry key="..\:/ibeor/code/app/src/main/res/layout/fragment_madeit.xml" value="0.1361111111111111" />
         <entry key="..\:/ibeor/code/app/src/main/res/layout/fragment_maps.xml" value="0.1675213675213675" />
         <entry key="..\:/ibeor/code/app/src/main/res/layout/fragment_my_details.xml" value="0.1267361111111111" />
         <entry key="..\:/ibeor/code/app/src/main/res/layout/fragment_my_phone_number.xml" value="0.25" />
-        <entry key="..\:/ibeor/code/app/src/main/res/layout/fragment_open_details.xml" value="0.25" />
+        <entry key="..\:/ibeor/code/app/src/main/res/layout/fragment_open_details.xml" value="0.18" />
+        <entry key="..\:/ibeor/code/app/src/main/res/layout/fragment_safety.xml" value="0.15598290598290598" />
         <entry key="..\:/ibeor/code/app/src/main/res/layout/fragment_select_country.xml" value="0.2" />
+        <entry key="..\:/ibeor/code/app/src/main/res/layout/fragment_settings.xml" value="0.1675213675213675" />
         <entry key="..\:/ibeor/code/app/src/main/res/layout/fragment_sign_in_with.xml" value="0.2" />
         <entry key="..\:/ibeor/code/app/src/main/res/layout/fragment_signin_email.xml" value="0.1675213675213675" />
+        <entry key="..\:/ibeor/code/app/src/main/res/layout/fragment_wel_come.xml" value="0.1675213675213675" />
         <entry key="..\:/ibeor/code/app/src/main/res/layout/fragment_your_mail.xml" value="0.33" />
         <entry key="..\:/ibeor/code/app/src/main/res/layout/hobby_items.xml" value="0.33" />
         <entry key="..\:/ibeor/code/app/src/main/res/layout/invalid_no_layout.xml" value="0.22" />

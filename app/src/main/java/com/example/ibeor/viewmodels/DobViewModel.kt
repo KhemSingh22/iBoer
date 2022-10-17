@@ -16,6 +16,7 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.navigation.Navigation
 import com.example.ibeor.R
+import com.example.ibeor.manager.SessionManager
 import com.example.ibeor.utils.FirebaseUtils
 import com.google.firebase.firestore.SetOptions
 import java.util.*
@@ -31,12 +32,12 @@ class DobViewModel(var activity: Activity, var tvDob : TextView, var tvAge: Text
             Toast.makeText(activity, "Please enter your Date of birth", Toast.LENGTH_SHORT).show()
         } else {
             openPopup(view,dateofbirth)
-
         }
     }
 
     private fun UploadDAta(view: View) {
-        dateofbirth.put("statusOTP",5)
+        val status = 5
+        dateofbirth.put("statusOTP",status)
         FirebaseUtils().fireStoreDatabase.collection("Users").document(FirebaseUtils().Uid)
             .set(dateofbirth, SetOptions.merge())
             .addOnSuccessListener {
@@ -44,6 +45,8 @@ class DobViewModel(var activity: Activity, var tvDob : TextView, var tvAge: Text
                 Navigation.findNavController(view).navigate(R.id.action_DOBFragment2_to_addPhotoFragment2)
                 tvDob.clearComposingText()
                 tvAge.clearComposingText()
+                val sessionManager = SessionManager(activity)
+                sessionManager.saVeStatus(status.toString())
             }
             .addOnFailureListener {
                 Log.e("SDDDDD",it.toString())

@@ -23,6 +23,7 @@
         android:background="@color/main_back"
         tools:context=".fragments.HomeScreenFragment"
         tools:ignore="MissingConstraints">
+
         <RelativeLayout
             android:id="@+id/profile_image"
             android:layout_width="@dimen/_40sdp"
@@ -35,6 +36,7 @@
             tools:ignore="OnClick">
 
             <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/profileImage_iv"
                 android:layout_width="@dimen/_35sdp"
                 android:layout_height="@dimen/_35sdp"
                 android:layout_centerInParent="true"

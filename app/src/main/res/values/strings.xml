@@ -65,4 +65,15 @@
     <string name="title">title</string>
     <string name="_331_623_8413">331-623-8413</string>
     <string name="_1">(+1)</string>
+    <string name="dog">Dog</string>
+    <string name="call">Call</string>
+    <string name="message">Message</string>
+    <string name="set_alarm">Set Alarm</string>
+    <string name="music">Music</string>
+    <string name="friend">Friend</string>
+    <string name="send">Send</string>
+    <string name="alarm">Alarm</string>
+    <string name="get_verified">Get Verified</string>
+    <string name="safty">Safety</string>
+    <string name="edit_profile">Edit Profile</string>
 </resources>

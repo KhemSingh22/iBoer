@@ -4,7 +4,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <data>
-<variable
+    <variable
     name="countryViewModel"
     type="com.example.ibeor.viewmodels.CountryViewModel" />
     </data>

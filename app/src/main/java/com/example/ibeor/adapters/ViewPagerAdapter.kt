@@ -20,7 +20,7 @@ class ViewPagerAdapter(var requireActivity: FragmentActivity,
     }
 
     override fun onBindViewHolder(holder: ViewPagerViewHolder, position: Int) {
-        holder.seTdata(requireActivity, dataList[position].image)
+        holder.seTdata(requireActivity, dataList[position].image0)
     }
 
     override fun getItemCount(): Int {
@@ -29,10 +29,15 @@ class ViewPagerAdapter(var requireActivity: FragmentActivity,
 
     class ViewPagerViewHolder(val binding: ViewPagerItemBinding) :
         RecyclerView.ViewHolder(binding.root) {
-        fun seTdata(requireActivity: FragmentActivity, image: Int) {
-            Glide.with(requireActivity)
-                .load(image)
-                .into(binding.viewItemImage)
+        fun seTdata(
+            requireActivity: FragmentActivity,
+            image0: String?
+        ) {
+            if (image0!=null){
+                Glide.with(requireActivity)
+                    .load(image0)
+                    .into(binding.viewItemImage)
+            }
 
         }
 

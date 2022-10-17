@@ -10,6 +10,7 @@ import androidx.databinding.ObservableField
 import androidx.lifecycle.ViewModel
 import androidx.navigation.Navigation
 import com.example.ibeor.R
+import com.example.ibeor.manager.SessionManager
 import com.example.ibeor.utils.FirebaseUtils
 import com.google.firebase.firestore.SetOptions
 
@@ -30,9 +31,10 @@ class YourEmailViewModel(var activity: Activity) : ViewModel() {
     }
 
     private fun uploadEmail(mail: String?, view: View) {
+        val status = 2
         val emaiL = HashMap<String,Any>()
         emaiL.put("email",mail.toString())
-        emaiL.put("statusOTP", 2)
+        emaiL.put("statusOTP", status)
 
         Log.e("SSSSSSS", uId + "BBB==" + emaiL)
 
@@ -40,9 +42,9 @@ class YourEmailViewModel(var activity: Activity) : ViewModel() {
             .set(emaiL, SetOptions.merge())
             .addOnSuccessListener {
                 Toast.makeText(activity, "Email Upload Success", Toast.LENGTH_SHORT).show()
-                Navigation.findNavController(view)
-                    .navigate(R.id.action_yourMailFragment2_to_firstNameFragment2)
-
+                Navigation.findNavController(view).navigate(R.id.action_yourMailFragment2_to_firstNameFragment2)
+                val sessionManager = SessionManager(activity)
+                sessionManager.saVeStatus(status.toString())
             }
             .addOnFailureListener {
                 Toast.makeText(activity, "Email Upload Fail", Toast.LENGTH_SHORT).show()
